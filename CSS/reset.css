@@ -114,6 +114,10 @@ select {
   text-transform: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 button,
 [type='button'],
 [type='reset'],
