@@ -52,6 +52,7 @@ main {
 .header-obs {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	gap: 1.5rem;
 	padding-inline: 1.5rem;
 } 
