@@ -29,22 +29,6 @@ body {
 	border-right: 2px solid rgba(51, 51, 51, 0.25);
 }
 
-.group-top {
-	position: relative;
-	margin-left: 234px;
-	width: 100%;
-	max-width: 202px;
-	min-height: 92px;
-	flex-shrink: 0;
-	align-self: start;
-	color: #151515;
-	--min-font-size: 27; --max-font-size: 49.61; font-size: var(--interpolate);
-	font-family: 'Jua';
-	font-weight: 400;
-	line-height: normal;
-	letter-spacing: 2.95px;
-}
-
 .title {
 	position: absolute; top: 0; left: 0; right: 0; 
 	opacity: 0.8;
@@ -235,9 +219,6 @@ body {
 @media screen and (max-width: 1024px) {
 	body {
 		padding-inline: var(--margin-md);
-	}
-	.group-top {
-		margin-inline: 0;
 	}
 	.row-top {
 		margin-inline: 0;
