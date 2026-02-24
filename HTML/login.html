@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fonts.css">
     <title>Opaco - Login</title>
 </head>
+
 <body>
-    <main>
-        <section class="login-content">
-            <img src="/assets/opaco_logo.svg" alt="Opaco">
-            <form action="">
-                <section class = "login-form">
-                    <header>
-                        <h2>Bem vindo de volta!</h2>
-                        <p>Faça login na sua conta</p>
-                    </header>
+    <div class="login-content">
+        <img src="/assets/opaco_logo.svg" alt="Opaco Logo" class="login-logo">
+        <form action="#" class="login-form">
+            <div class="form-header">
+                <h2 class="form-title">Bem vindo de volta!</h2>
+                <p class="form-subtitle">Faça login na sua conta</p>
+            </div>
 
-                    <div>
-                        <label for="email">E-mail</label>
-                        <div>
-                            <input type="email" id="email" class="login-form__input" placeholder="Insira seu nome de usuário">
-                        </div>
-                    </div>
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <div class="input-field">
+                    <span class="icon">😊</span>
+                    <input type="email" id="email" class="login-input" placeholder="Insira seu e-mail">
+                </div>
+            </div>
 
-                    <div>
-                        <label>Senha</label>
-                        <div>
-                            <input type="password" id="password" class="" placeholder="Insira sua senha aqui">
-                        </div>
-                    </div>
-                </section>
-                <section class="login-buttons">
-                    <div>
-                        <label>
-                            <input type="checkbox">
-                            <span>Lembrar de mim</span>
-                        </label>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <div class="input-field">
+                    <span class="icon">😊</span>
+                    <input type="password" id="password" class="login-input" placeholder="Insira sua senha">
+                </div>
+            </div>
 
-                        <a href="#">Esqueceu a senha?</a>
-                    </div>
+            <div class="form-options">
+                <label class="checkbox-container">
+                    <input type="checkbox"> Lembrar de mim
+                </label>
+                <a href="#" class="link-forgot">Esqueceu a senha?</a>
+            </div>
 
-                    <div>
-                        <button>Fazer login</button>
-                        <p>Não tem uma conta ainda? 
-                            <a href="#" class="login-footer__link login-footer__link--highlight">Registrar-se</a>
-                        </p>
-                    </div>  
-                </section>
-                <section class="login-footer">
-                    <p><a href="#">Fazer login como administrador</a></p>
-                </section>
-            </section>
+            <div class="form-actions">
+                <button type="submit" class="btn-login">Fazer login</button>
+                <p>Não tem uma conta ainda? <a href="#" class="link-highlight">Registrar-se</a></p>
+            </div>
+
+            <a href="#" class="admin-login">
+                <img src="" alt=""> <span>Fazer login como administrador</span>
+            </a>
         </form>
-        <section class="login-decorator">
-            <img src="/assets/decorators/blue-decorator.svg" alt="Decoração Azul">
-        </section>
-    </main>
+    </div>
+    <div class="login-decorator">
+
+    </div>
 </body>
 </html>
