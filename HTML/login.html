@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Opaco - Login</title>
 </head>
-
 <body>
     <main>
-        <div id="card-login">
-            <img src="/assets/imagens/Logo-SM.png" alt="logo">
-            <forms>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <section class="login-content">
+            <img src="/assets/opaco_logo.svg" alt="Opaco">
+            <form action="">
+                <section class = "login-form">
+                    <header>
+                        <h2>Bem vindo de volta!</h2>
+                        <p>Faça login na sua conta</p>
+                    </header>
 
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+                    <div>
+                        <label for="email">E-mail</label>
+                        <div>
+                            <input type="email" id="email" class="login-form__input" placeholder="Insira seu nome de usuário">
+                        </div>
+                    </div>
 
-                <button type="submit">Acessar</button>
-            </forms>
-        </div>
-        <div id="recuperar-senha-email">
-            <form action="" method="get">
-                <h3>Recuperar senha</h3>
-                <p>Insira o e-mail que está cadastrado e
-                    acesse o link que será enviado no seu e-mail</p>
-                <input type="email" name="rec-email" id="rec-senha-email">
-                <button type="submit">Enviar</button>
-                <button type="button">Cancelar</button>
-            </form>
-        </div>
+                    <div>
+                        <label>Senha</label>
+                        <div>
+                            <input type="password" id="password" class="" placeholder="Insira sua senha aqui">
+                        </div>
+                    </div>
+                </section>
+                <section class="login-buttons">
+                    <div>
+                        <label>
+                            <input type="checkbox">
+                            <span>Lembrar de mim</span>
+                        </label>
+
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+
+                    <div>
+                        <button>Fazer login</button>
+                        <p>Não tem uma conta ainda? 
+                            <a href="#" class="login-footer__link login-footer__link--highlight">Registrar-se</a>
+                        </p>
+                    </div>  
+                </section>
+                <section class="login-footer">
+                    <p><a href="#">Fazer login como administrador</a></p>
+                </section>
+            </section>
+        </form>
+        <section class="login-decorator">
+            <img src="/assets/decorators/blue-decorator.svg" alt="Decoração Azul">
+        </section>
     </main>
 </body>
-
 </html>
