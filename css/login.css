@@ -121,6 +121,7 @@ a {
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .form-actions button {
