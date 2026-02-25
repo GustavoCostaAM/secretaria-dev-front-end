@@ -1,3 +1,10 @@
 :root {
     --primary-color: #5D85B4;
+    --white: #FFFFFF;
+    --black: #444444;
+    --faint-black: #3333333f;
+    --gray: #F0F1F3;
+    --faint-gray: #D9D9D9;
+    --red: #FF6767;
+    --yellow: #FFB651;
 }
