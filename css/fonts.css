@@ -1,30 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
 @import url('variables.css');
 
 :root {
     --primary-font: 'Comic Neue', cursive;
-    --secondary-font: 'Lato', sans-serif;
+    --secondary-font: 'Lexend', sans-serif;
 }
 
 * {
     font-family: var(--primary-font);
     font-style: normal;
     color: var(--font-color);
+    font-optical-sizing: auto;
     -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, ::placeholder {
+    font-family: var(--secondary-font);
 }
 
 h1 {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 h2 {
     font-size: 1.85rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 p, a {
     font-size: 1rem;
+    font-weight: 500;
+}
+
+a {
     font-weight: 500;
 }
 

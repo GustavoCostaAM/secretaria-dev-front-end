@@ -2,19 +2,25 @@
 
 body {
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+
+    background-color: var(--gray);
+    background-image: url('../assets/decorators/background.png');
+    background-position: center;
+    background-size: 60%;
+    background-repeat: repeat;
 }
 
 .form-wrap {
     width: 60%;
     max-width: 400px;
+    min-width: 320px;
     padding: 2rem;
-    
     text-align: center;
 
     background-color: var(--white);
@@ -23,6 +29,10 @@ body {
 
 .form-wrap>:first-child {
     margin-bottom: 15%;
+}
+
+.form-wrap>:first-child p {
+    font-size: 1.15rem;
 }
 
 .form-wrap>:last-child {
@@ -46,6 +56,10 @@ form>:last-child {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.login-actions>a {
+    text-align: right;
 }
 
 .remind-me {
@@ -72,10 +86,11 @@ form>:last-child {
 .input-container input {
     padding: 0.85rem;
     padding-left: 12%;
+}
 
-    border-width: 2px;
-    border-radius: var(--border-radius-input);
-    border-color: var(--border-color);
+input[type='checkbox'] {
+    width: 24px;
+    height: auto;
 }
 
 form button {

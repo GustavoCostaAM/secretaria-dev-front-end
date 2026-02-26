@@ -1,18 +1,21 @@
 :root {
     --primary-color: #5D85B4;
     --white: #FFFFFF;
+    --gray: #c9c9c9;
     --black: #444444;
     --faint-black: #3333333f;
-    --gray: #F0F1F3;
     --faint-gray: #D9D9D9;
     --red: #FF6767;
     --yellow: #FFB651;
     --hyperlink: #4D81E7;
 
     --font-color: var(--black);
+    --button-color: #e7a935;
+    --button-border-color: #8a682a;
 
-    --border-radius-default: 12px;
-    --border-radius-input: 8px;
     --border-default: solid;
     --border-color: #44444465;
+    --border-radius-default: 12px;
+    --border-width-interactive: 2px;
+    --border-radius-interactive: 8px;
 }

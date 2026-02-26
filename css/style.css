@@ -3,3 +3,37 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+input {
+    border-width: var(--border-width-interactive);
+    border-radius: var(--border-radius-interactive);
+    border-color: var(--border-color);
+    border-style: solid;
+}
+
+input[type='checkbox'] {
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none;
+    background-image: none;
+}
+
+input[type='checkbox']:checked {
+    background-image: url('../assets/icons/x-icon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+
+button {
+    background-color: var(--button-color);
+    border-color: var(--button-border-color);
+    border-width: var(--border-width-interactive);
+    border-radius: var(--border-radius-interactive);
+    border-style: solid;
+}
+
+.icon {
+    width: 20px;
+    height: auto;
+}

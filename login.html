@@ -11,30 +11,26 @@
     <title>Opaco — Login</title>
 </head>
 
-<body>
+<body style="overflow-y: hidden;">
     <div class="form-wrap">
         <div>
             <h2>Bem vindo de volta!</h2>
             <p>Faça login na sua conta</p>
         </div>
         <form action="#">
-            <div>
-                <div class="input-container">
-                    <p class="bold">E-mail</p>
-                    <div>
-                        <img class="icon" src="/assets/icons/face-icon.svg" alt="">
-                        <input type="username" name="email" placeholder="Insira seu nome de usuário" pattern="" required>
-                    </div>
+            <div class="input-container">
+                <p class="bold">E-mail</p>
+                <div>
+                    <img class="icon" src="/assets/icons/face-icon.svg">
+                    <input type="username" name="email" placeholder="Insira seu nome de usuário" pattern="" required>
                 </div>
             </div>
 
-            <div>
-                <div class="input-container">
-                    <p class="bold">Senha</p>
-                    <div>
-                        <img src="/assets/icons/password-icon.svg" alt="">
-                        <input type="password" name="password" placeholder="Insira sua senha" pattern="" required>
-                    </div>
+            <div class="input-container">
+                <p class="bold">Senha</p>
+                <div>
+                    <img class="icon" src="/assets/icons/password-icon.svg">
+                    <input type="password" name="password" placeholder="Insira sua senha" pattern="" required>
                 </div>
             </div>
 
@@ -54,7 +50,10 @@
         <p>Não tem uma conta ainda? <a href="#">Registrar-se</a></p>
     </div>
 
-    <a id="admin-redirect" href="#"><img src="/assets/icons/admin-icon.svg" alt=""><span>Fazer login como administrador</span></a>
+    <a id="admin-redirect" href="#">
+        <img class="icon" src="/assets/icons/admin-icon.svg">
+        <span>Fazer login como administrador</span>
+    </a>
 
     <div>
     </div>
