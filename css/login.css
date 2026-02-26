@@ -1,17 +1,81 @@
 @import url('/css/variables.css');
 
 body {
+    height: 100vh;
+    overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-body {
     background-color: red;
 }
 
 .form-wrap {
-    background-color: white;
+    width: 60%;
+    max-width: 400px;
     padding: 2rem;
+    
+    text-align: center;
+
+    background-color: var(--white);
     border-radius: var(--border-radius-default);
+}
+
+.form-wrap>:first-child {
+    margin-bottom: 15%;
+}
+
+form>:nth-child(n) {
+    margin-bottom: 5%;
+}
+
+form>:last-child {
+    margin-bottom: 0;
+}
+
+.input-container p, .login-actions {
+    text-align: left;
+}
+
+.login-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remind-me {
+    display: flex;
+    gap: 5%;
+    white-space: nowrap;
+}
+
+.input-container div {
+    display: flex;
+    align-items: center;
+}
+
+.input-container img {
+    position: absolute;
+}
+
+.input-container input, form button {
+    width: 100%;
+}
+
+.input-container input {
+    padding-left: 10%;
+    padding: 0.85rem;
+
+    border-width: 1px;
+    border-radius: var(--border-radius-input);
+}
+
+form button {
+    padding: 0.5rem;
+}
+
+#admin-redirect {
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
