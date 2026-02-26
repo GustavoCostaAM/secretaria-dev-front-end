@@ -1,10 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Schoolbell&display=swap');
+@import url('variables.css');
 
 :root {
-    --primary-font: 'Lato', sans-serif;
+    --primary-font: 'Comic Neue', cursive;
+    --secondary-font: 'Lato', sans-serif;
 }
 
 * {
     font-family: var(--primary-font);
+    font-style: normal;
+    color: var(--font-color);
     -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.85rem;
+    font-weight: 700;
+}
+
+p, a {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+input::placeholder {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+a {
+    color: var(--hyperlink);
 }

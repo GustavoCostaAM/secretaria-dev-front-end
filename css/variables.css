@@ -9,6 +9,10 @@
     --yellow: #FFB651;
     --hyperlink: #4D81E7;
 
+    --font-color: var(--black);
+
     --border-radius-default: 12px;
     --border-radius-input: 8px;
+    --border-default: solid;
+    --border-color: #44444465;
 }

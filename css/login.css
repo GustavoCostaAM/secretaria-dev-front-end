@@ -25,6 +25,10 @@ body {
     margin-bottom: 15%;
 }
 
+.form-wrap>:last-child {
+    margin-top: 5%;
+}
+
 form>:nth-child(n) {
     margin-bottom: 5%;
 }
@@ -33,7 +37,8 @@ form>:last-child {
     margin-bottom: 0;
 }
 
-.input-container p, .login-actions {
+.input-container p {
+    margin-bottom: 1%;    
     text-align: left;
 }
 
@@ -56,6 +61,8 @@ form>:last-child {
 
 .input-container img {
     position: absolute;
+    transform: translateX(65%);
+    opacity: 80%;
 }
 
 .input-container input, form button {
@@ -63,11 +70,12 @@ form>:last-child {
 }
 
 .input-container input {
-    padding-left: 10%;
     padding: 0.85rem;
+    padding-left: 12%;
 
-    border-width: 1px;
+    border-width: 2px;
     border-radius: var(--border-radius-input);
+    border-color: var(--border-color);
 }
 
 form button {
