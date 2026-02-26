@@ -7,55 +7,57 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="/css/colors.css">
-    <title>Opaco - Login</title>
+
+    <title>Opaco — Login</title>
 </head>
 
 <body>
-    <div class="login-content">
-        <img src="/assets/opaco_logo.svg" alt="Opaco Logo" class="login-logo">
-        <form action="#" class="login-form">
-            <div class="form-header">
-                <h2 class="form-title">Bem vindo de volta!</h2>
-                <p class="form-subtitle">Faça login na sua conta</p>
-            </div>
-
-            <div class="input-group">
-                <label class="login-label" for="username">E-mail</label>
-                <div class="input-field">
-                    <span class="icon"><img src="/assets/icons/face-icon.svg" alt=""></span>
-                    <input type="username" id="email" class="login-input" placeholder="Insira seu nome de usuário">
+    <div class="form-wrap">
+        <div>
+            <h2>Bem vindo de volta!</h2>
+            <p>Faça login na sua conta</p>
+        </div>
+        <form action="#">
+            <div>
+                <div class="input-container">
+                    <p>E-mail</p>
+                    <div>
+                        <img class="icon" src="/assets/icons/face-icon.svg" alt="">
+                        <input type="username" name="email" placeholder="Insira seu nome de usuário" pattern=""
+                            required>
+                    </div>
                 </div>
             </div>
 
-            <div class="input-group">
-                <label for="password" class = "login-label">Senha</label>
-                <div class="input-field">
-                    <span class="icon"><img src="/assets/icons/password-icon.svg" alt=""></span>
-                    <input type="password" id="password" class="login-input" placeholder="Insira sua senha">
+            <div>
+                <div>
+                    <p>E-mail</p>
+                    <div>
+                        <img src="/assets/icons/password-icon.svg" alt="">
+                        <input type="password" name="password" placeholder="Insira sua senha" pattern="" required>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-options">
-                <label class="checkbox-container">
+            <div>
+                <label>
                     <input type="checkbox">
-                    <span class="checkmark"></span>
-                    Lembrar de mim
                 </label>
-                <a href="#" class="link-forgot">Esqueceu a senha?</a>
+                <a href="#">Esqueceu a senha?</a>
             </div>
 
-            <div class="form-actions">
-                <button type="submit" class="btn-login">Fazer login</button>
-                <p>Não tem uma conta ainda? <a href="#" class="link-highlight">Registrar-se</a></p>
+            <div>
+                <button type="submit">Fazer login</button>
             </div>
-            <a href="#" class="admin-login">
-                <span class="icon"><img src="/assets/icons/admin-icon.svg" alt=""></span> <span>Fazer login como administrador</span>
-            </a>
         </form>
-    </div>
-    <div class="login-decorator">
 
+        <p>Não tem uma conta ainda? <a href="#">Registrar-se</a></p>
+    </div>
+
+    <a href="#"><img src="/assets/icons/admin-icon.svg" alt=""><span>Fazer login como administrador</span></a>
+
+    <div>
     </div>
 </body>
+
 </html>
