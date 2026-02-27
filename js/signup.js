@@ -16,11 +16,12 @@ submitButton.addEventListener("click", async function(event) {
         name: inputName.value,
         username: inputUserName.value,
         email: inputEmail.value,
-        password: inputPassword.value
+        password: inputPassword.value,
+        role: "STUDENT"
     }
 
     //envia os dados para o backend
-        const response = await fetch(getLoginUrl(), {
+        const response = await fetch(getSingUpURL(), {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
