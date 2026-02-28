@@ -31,12 +31,9 @@ submitButton.addEventListener("click", async function(event) {
 
     //caso de sucesso na api
     if (response.ok){
-        //pega o token retornado pela api
-            const token = await response.json().token
-
-        //salva o token no localStorage
-        localStorage.setItem("token", token)
-
-        window.location.href = "crud-base.html" //pagina principal do nosso crud
+        window.location.href = "login.html" //pagina de login
+    }else{
+        alert("Erro ao fazer cadastro, tente novamente.")
+        window.location.reload() 
     }
 })

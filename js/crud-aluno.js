@@ -3,7 +3,12 @@ const table = document.querySelector("#table")
 const tbody = table.querySelector("tbody")
 
 //pega o token do localStorage
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzZWNyZXRhcmlhLWFwaSIsInN1YiI6ImtldmluIiwiZXhwIjoxNzcyMjU1OTIyfQ.abtoKUrTtLcXRXsUuyRAyWlLEYUn7KpIpq-j8F9qFNM"
+const token = localStorage.getItem("token")
+
+//se o token não existir, redireciona para a página de login
+if (!token) {
+    window.location.href = "login.html"
+}
 
 loadStudentData(token, "") //load de notas padrão (sem filtro)
 

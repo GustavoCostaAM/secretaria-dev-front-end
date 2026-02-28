@@ -17,3 +17,7 @@ function getSingUpRedirectURL(){
 function getStudentDataURL(){
     return usePath + "api/grades/boletim"
 }
+
+function getLoginURL(){
+    return usePath + "api/auth/login"
+}
