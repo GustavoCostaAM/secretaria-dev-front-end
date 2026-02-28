@@ -9,7 +9,7 @@ submitButton = document.querySelector("#submit")
 
 //adiciona evento de click ao botão de submit
 submitButton.addEventListener("click", async function(event) {
-    event.preventDefault() //previne o comportamento padrão do formulário
+    event.preventDefault() //previne o envio de formulario tradicional
 
     //cria um objeto com os dados do formulário
     const userData = {
@@ -21,7 +21,7 @@ submitButton.addEventListener("click", async function(event) {
     }
 
     //envia os dados para o backend
-        const response = await fetch(getSingUpURL(), {
+    const response = await fetch(getSingUpURL(), {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

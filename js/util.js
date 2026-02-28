@@ -13,3 +13,7 @@ function getSingUpURL(){
 function getSingUpRedirectURL(){
     return window.location.href.replace("signup.html", "signin.html")
 }
+
+function getStudentDataURL(){
+    return usePath + "api/grades/boletim"
+}
