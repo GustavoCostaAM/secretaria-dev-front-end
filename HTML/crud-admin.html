@@ -22,7 +22,7 @@
             <main>
                 <div class="content-box">
                     <h1>Olá, administrador!</h1>
-                    
+
                 </div>
                 <div class="content-box">
                     <div class="crud-header">
@@ -41,6 +41,7 @@
                                 <th>Id</th>
                                 <th>Nome</th>
                                 <th>Email</th>
+                                <th>Password</th>
                                 <th>Role</th>
                                 <th>Ações</th>
                             </thead>
@@ -51,12 +52,13 @@
                                     <td>Artur de Oliveira</td>
                                     <td>a***@hotmail.com</td>
                                     <td>********</td>
+                                    <td>STUDENT</td>
                                     <td>
-                                        <button class="edit register">
-                                            ✏️
+                                        <button class="edit register" onclick="openDialog('edit-register')">
+                                            <img class="icon" src="../assets/icones/edit.svg">
                                         </button>
                                         <button class="delete register">
-                                            🗑️
+                                            <img class="icon" src="../assets/icones/delete.svg">
                                         </button>
                                     </td>
                                 </tr>
@@ -79,8 +81,35 @@
         </aside>
     </div>
 
-    <script src="../js/util.js"></script>
-    <script src="../js/crud-adimin.js"></script>
+    <dialog id="edit-register">
+        <button class="close" onclick="closeDialog('edit-register')"><img
+                src="../assets/icones/close-button.svg"></button>
+        <h1>Editar Registro</h1>
+        <form action="">
+            <label for="name">Nome:</label>
+            <input type="text" name="name">
+
+            <label for="email">Email:</label>
+            <input type="email" name="email">
+
+            <label for="role">Cargo:</label>
+            <select name="role">
+                <option value="">ESTUDANTE</option>
+                <option value="">PROFESSOR</option>
+                <option value="">ADMINISTRADOR</option>
+            </select>
+
+            <label for="">Senha:</label>
+            <input type="password">
+            <button type="submit" class="button">
+                Atualizar
+            </button>
+        </form>
+    </dialog>
+
+    <!-- <script src="../js/util.js"></script>
+    <script src="../js/crud-adimin.js"></script> -->
+    <script src="../js/popup.js"></script>
 </body>
 
 </html>

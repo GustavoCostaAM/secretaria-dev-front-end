@@ -43,6 +43,7 @@
                                 <th>N2</th>
                                 <th>Média</th>
                                 <th>Situação</th>
+                                <th>Observação</th>
                             </thead>
                             <tbody id="tbody">
                                 <!--CRUD's loop for-->
@@ -52,6 +53,11 @@
                                     <td>5</td>
                                     <td>7.5</td>
                                     <td>Aprovado</td>
+                                    <td>
+                                        <button class="button observation" onclick="openDialog('obs-popup')">
+                                            <img src="../assets/icones/fi-br-comment-info.svg">
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr class="table-register">
                                     <td>Matemática</td>
@@ -59,6 +65,11 @@
                                     <td>5</td>
                                     <td>7.5</td>
                                     <td>Aprovado</td>
+                                    <td>
+                                        <button class="button observation" onclick="openDialog('obs-popup')">
+                                            <img src="../assets/icones/fi-br-comment-info.svg">
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr class="table-register">
                                     <td>Matemática</td>
@@ -66,6 +77,11 @@
                                     <td>5</td>
                                     <td>7.5</td>
                                     <td>Aprovado</td>
+                                    <td>
+                                        <button class="button observation" onclick="openDialog('obs-popup')">
+                                            <img src="../assets/icones/fi-br-comment-info.svg">
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr class="table-register">
                                     <td>Matemática</td>
@@ -73,6 +89,11 @@
                                     <td>5</td>
                                     <td>7.5</td>
                                     <td>Aprovado</td>
+                                    <td>
+                                        <button class="button observation" onclick="openDialog('obs-popup')">
+                                            <img src="../assets/icones/fi-br-comment-info.svg">
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr class="table-register">
                                     <td>Matemática</td>
@@ -80,6 +101,11 @@
                                     <td>5</td>
                                     <td>7.5</td>
                                     <td>Aprovado</td>
+                                    <td>
+                                        <button class="button observation" onclick="openDialog('obs-popup')">
+                                            <img src="../assets/icones/fi-br-comment-info.svg">
+                                        </button>
+                                    </td>
                                 </tr>
                                 <!--Meh-->
                             </tbody>
@@ -100,8 +126,29 @@
         </aside>
     </div>
 
-    <script src="../js/util.js"></script>
-    <script src="../js/crud-aluno.js"></script>
+    <dialog id="obs-popup">
+        <button class="close" onclick="closeDialog('obs-popup')"><img src="../assets/icones/close-button.svg"></button>
+        <div class="">
+            <h1>Boletim de Matemática</h1>
+            <hr>
+            <p>Nota 1: 5.0</p>
+            <p>Nota 2: 7.5</p>
+            <p>Situação: Aprovado</p>
+            <hr>
+            <div>
+                <h1>Observação do Professor</h1>
+                <p class="comment-box">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt consequuntur quasi accusamus! A
+                    accusantium, possimus minima dicta ullam reiciendis quis earum, natus aut veritatis fugiat quaerat
+                    libero! Dolorem, mollitia consequatur!
+                </p>
+            </div>
+            
+        </div>
+    </dialog>
+    <!-- <script src="../js/util.js"></script>
+    <script src="../js/crud-aluno.js"></script> -->
+    <script src="../js/popup.js"></script>
 </body>
 
 </html>
