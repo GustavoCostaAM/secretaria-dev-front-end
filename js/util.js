@@ -21,3 +21,7 @@ function getStudentDataURL(){
 function getLoginURL(){
     return usePath + "api/auth/login"
 }
+
+function getUsersURL(){
+    return usePath + "api/users/listActive"
+}

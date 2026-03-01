@@ -37,8 +37,17 @@ form.addEventListener("click", async function (event) {
         //guarda o token no local storage
         localStorage.setItem("token", token)
 
-        //redireciona para a página principal do crud
-        window.location.href = "crud-base.html"
+        //leva para o fluxo correto de acordo com a role
+
+        if (data.role === "ADM") {
+            window.location.href = "crud-admin.html"
+        }else if(data.role === "TEACHER"){
+            window.location.href = "crud-teacher.html" //ainda não temos essa pagina
+        }else{
+            //nesse ponto, o usuário é um aluno
+            window.location.href = "crud-base.html"
+        }
+
     }else {
         alert("Erro ao fazer login, tente novamente.")
         window.location.reload() //recarrega a página para limpar os campos
