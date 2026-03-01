@@ -33,5 +33,10 @@ async function loadObservations() {
             <p class="card-description">${element.observacao}</p>
         </div>`
         })
+    } else if (response.status === 403 || response.status === 401) {
+        //caso de erro, apaga o token e manda para tela de login
+        window.alert("Sessão expirada, faça login novamente.")
+        localStorage.removeItem("token")
+        window.location.href = "login.html"
     }
 }

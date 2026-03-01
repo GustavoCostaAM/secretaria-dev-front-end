@@ -20,7 +20,7 @@ async function getUsersData() {
     })
 
     //le a resposta
-    if (response.ok){
+    if (response.ok) {
         const data = await response.json()
         console.log(data)
 
@@ -29,28 +29,60 @@ async function getUsersData() {
 
         //preenche a tabela
         Object.values(data).forEach(element => {
-                table.innerHTML += `<tr>
+            table.innerHTML += `<tr class="table-register">
                     <td>${element.id}</td>
                     <td>${element.username}</td>
                     <td>${element.email}</td>
                     <td>${element.role}</td>
                     <td>
-                        <button class="edit register">
+                        <button class="edit register" data-id="${element.id}">
                             ✏️
                         </button>
-                        <button class="delete register">
+                        <button class="delete register" data-id="${element.id}">
                             🗑️
                         </button>
                     </td>
                 </tr>`
-            });
+        });
 
-            console.log("fluxo terminou")
+        //após preencher a tabela, adiciona os listeners de deletar
+        loadDeleteButtons()
+
+        console.log("fluxo terminou")
+    } else if (response.status === 403 || response.status === 401) {
+        //caso de erro, apaga o token e manda para tela de login
+        window.alert("Sessão expirada, faça login novamente.")
+        localStorage.removeItem("token")
+        window.location.href = "login.html"
     }
-
-
-
-
 }
 
+//adiciona event listener para deletar usuarios (desativar)
+async function loadDeleteButtons() {
+    //pega os botoes
+    const deleteButtons = document.querySelectorAll(".delete.register")
+
+    //adiciona o event listener para cada botao
+    deleteButtons.forEach(button => {
+        button.addEventListener("click", async () => {
+            const userId = button.getAttribute("data-id")
+            const response = await fetch(getDeleteUserURL(userId), {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "authorization": `Bearer ${token}`
+                }
+            })
+
+            if (response.ok) {
+                //recarrega os dados dos usuarios
+                getUsersData()
+
+                console.log("Usuario deletado com sucesso")
+            }
+        })
+    })
+}
+
+//carrega os dados dos usuarios assim que a pagina é aberta
 getUsersData()

@@ -25,3 +25,7 @@ function getLoginURL(){
 function getUsersURL(){
     return usePath + "api/users/listActive"
 }
+
+function getDeleteUserURL(userId){
+    return usePath + `api/users/${userId}`
+}
