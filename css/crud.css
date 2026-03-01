@@ -244,6 +244,12 @@ dialog{
     border-radius: 10px;
 }
 
+textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
 .close{
     margin-left: auto;
     border: none;

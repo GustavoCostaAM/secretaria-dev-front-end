@@ -21,12 +21,12 @@
             <hr>
             <main>
                 <div class="content-box">
-                    <h1>Olá, administrador!</h1>
-
+                    <h1>Bem-vindo de volta!</h1>
+                    <a href="aluno-obs.html"><button class="button">Ver Observações</button></a>
                 </div>
                 <div class="content-box">
                     <div class="crud-header">
-                        <h1>Usuários</h1>
+                        <h1>Boletim</h1>
                         <div id="search-div">
                             <form action="" method="">
                                 <input type="search" id="search" placeholder="Buscar por Matéria">
@@ -36,29 +36,26 @@
                     <hr>
                     <br>
                     <div class="table-wrap">
-                        <table class="table-boletim">
+                        <table class="table-boletim" id="table">
                             <thead class="table-header">
-                                <th>Id</th>
+                                <th>Matrícula</th>
                                 <th>Nome</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Role</th>
-                                <th>Ações</th>
+                                <th>N1</th>
+                                <th>N2</th>
+                                <th>Média Final</th>
+                                <th>Ação</th>
                             </thead>
-                            <tbody id="table-infos">
+                            <tbody id="tbody">
                                 <!--CRUD's loop for-->
                                 <tr class="table-register">
-                                    <td>123</td>
-                                    <td>Artur de Oliveira</td>
-                                    <td>a***@hotmail.com</td>
-                                    <td>********</td>
-                                    <td>STUDENT</td>
+                                    <td>12340</td>
+                                    <td>Aristeu da Silva</td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                    <td>7.5</td>
                                     <td>
-                                        <button class="edit register" onclick="openDialog('edit-register')">
-                                            <img class="icon" src="../assets/icones/edit.svg">
-                                        </button>
-                                        <button class="delete register">
-                                            <img class="icon" src="../assets/icones/delete.svg">
+                                        <button class="button observation" onclick="openDialog('obs-popup')">
+                                            <img src="../assets/icones/fi-br-comment-info.svg">
                                         </button>
                                     </td>
                                 </tr>
@@ -81,34 +78,27 @@
         </aside>
     </div>
 
-    <dialog id="edit-register">
-        <button class="close" onclick="closeDialog('edit-register')"><img
-                src="../assets/icones/close-button.svg"></button>
-        <h1>Editar Registro</h1>
-        <form action="">
-            <label for="name">Nome:</label>
-            <input type="text" name="name">
-
-            <label for="email">Email:</label>
-            <input type="email" name="email">
-
-            <label for="role">Cargo:</label>
-            <select name="role">
-                <option value="">ESTUDANTE</option>
-                <option value="">PROFESSOR</option>
-                <option value="">ADMINISTRADOR</option>
-            </select>
-
-            <label for="">Senha:</label>
-            <input type="password">
+    <dialog id="obs-popup">
+        <button class="close" onclick="closeDialog('obs-popup')"><img src="../assets/icones/close-button.svg"></button>
+        <div class="">
+            <h1>Boletim de Aristeu da Silva</h1>
+            <hr>
+            <label for="n1">Nota 1: </label>
+            <input type="number" name="n1">
+            <label for="n2">Nota 2: </label>
+            <input type="number" name="n2">
+            <hr>
+            <div>
+                <h1>Observação</h1>
+                <textarea class="comment-box">Hellooo</textarea>
+            </div>
             <button type="submit" class="button">
                 Atualizar
             </button>
-        </form>
+        </div>
     </dialog>
-
     <script src="../js/util.js"></script>
-    <script src="../js/crud-adimin.js"></script>
+    <script src="../js/crud-aluno.js"></script>
     <script src="../js/popup.js"></script>
 </body>
 
