@@ -49,11 +49,8 @@ async function getUsersData() {
         loadDeleteButtons()
 
         console.log("fluxo terminou")
-    } else if (response.status === 403 || response.status === 401) {
-        //caso de erro, apaga o token e manda para tela de login
-        window.alert("Sessão expirada, faça login novamente.")
-        localStorage.removeItem("token")
-        window.location.href = "login.html"
+    } else if (handleSessionExpired(response)) {
+        return
     }
 }
 
@@ -79,6 +76,8 @@ async function loadDeleteButtons() {
                 getUsersData()
 
                 console.log("Usuario deletado com sucesso")
+            } else if (handleSessionExpired(response)) {
+                return
             }
         })
     })

@@ -40,9 +40,8 @@
                             <thead class="table-header">
                                 <th>Matrícula</th>
                                 <th>Nome</th>
-                                <th>N1</th>
-                                <th>N2</th>
-                                <th>Média Final</th>
+                                <th>Apelido</th>
+                                <th>Email</th>
                                 <th>Ação</th>
                             </thead>
                             <tbody id="tbody">
@@ -50,9 +49,8 @@
                                 <tr class="table-register">
                                     <td>12340</td>
                                     <td>Aristeu da Silva</td>
-                                    <td>10</td>
-                                    <td>5</td>
-                                    <td>7.5</td>
+                                    <td>Aris</td>
+                                    <td>aristeu@email.com</td>
                                     <td>
                                         <button class="button observation" onclick="openDialog('obs-popup')">
                                             <img src="../assets/icones/fi-br-comment-info.svg">
@@ -81,16 +79,16 @@
     <dialog id="obs-popup">
         <button class="close" onclick="closeDialog('obs-popup')"><img src="../assets/icones/close-button.svg"></button>
         <div class="">
-            <h1>Boletim de Aristeu da Silva</h1>
+            <h1 id="popup-aluno">Boletim de Aristeu da Silva</h1>
             <hr>
             <label for="n1">Nota 1: </label>
-            <input type="number" name="n1">
+            <input type="number" name="n1" id="popup-n1">
             <label for="n2">Nota 2: </label>
-            <input type="number" name="n2">
+            <input type="number" name="n2" id="popup-n2">
             <hr>
             <div>
                 <h1>Observação</h1>
-                <textarea class="comment-box">Hellooo</textarea>
+                <textarea class="comment-box" id="popup-observacao">Hellooo</textarea>
             </div>
             <button type="submit" class="button">
                 Atualizar
@@ -98,7 +96,7 @@
         </div>
     </dialog>
     <script src="../js/util.js"></script>
-    <script src="../js/crud-aluno.js"></script>
+    <script src="../js/crud-teacher.js"></script>
     <script src="../js/popup.js"></script>
 </body>
 

@@ -29,3 +29,22 @@ function getUsersURL(){
 function getDeleteUserURL(userId){
     return usePath + `api/users/${userId}`
 }
+
+function getListByRoleURL(role){
+    return usePath + `api/users/listByRole?role=${role}`
+}
+
+function getSendGradesURL(){
+    return usePath + "api/grades/sendGrades"
+}
+
+function handleSessionExpired(response) {
+    if (response.status === 403 || response.status === 401) {
+        window.alert("Sessão expirada, faça login novamente.")
+        localStorage.removeItem("token")
+        window.location.href = "login.html"
+        return true
+    }
+
+    return false
+}

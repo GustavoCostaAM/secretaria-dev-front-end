@@ -42,7 +42,10 @@ form.addEventListener("click", async function (event) {
         if (data.role === "ADM") {
             window.location.href = "crud-admin.html"
         }else if(data.role === "TEACHER"){
-            window.location.href = "crud-teacher.html" //ainda não temos essa pagina
+            //salva o subject do professor no localStorage para usar na tela de professor
+            localStorage.setItem("subject", data.subject)
+
+            window.location.href = "crud-professor.html"
         }else{
             //nesse ponto, o usuário é um aluno
             window.location.href = "crud-base.html"
