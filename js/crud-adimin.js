@@ -33,9 +33,10 @@ async function getUsersData() {
                     <td>${element.id}</td>
                     <td>${element.username}</td>
                     <td>${element.email}</td>
+                    <td>***********</td>
                     <td>${element.role}</td>
                     <td>
-                        <button class="edit register" data-id="${element.id}">
+                        <button class="edit register" data-id="${element.id}" onclick="openDialog('edit-register')">
                             ✏️
                         </button>
                         <button class="delete register" data-id="${element.id}">

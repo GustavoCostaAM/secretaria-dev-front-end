@@ -38,6 +38,10 @@ function getSendGradesURL(){
     return usePath + "api/grades/sendGrades"
 }
 
+function getUpdateGradesURL() {
+    return usePath + "api/grades/updateGrades"
+}
+
 function handleSessionExpired(response) {
     if (response.status === 403 || response.status === 401) {
         window.alert("Sessão expirada, faça login novamente.")
