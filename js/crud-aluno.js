@@ -2,6 +2,13 @@
 const table = document.querySelector("#table")
 const tbody = table.querySelector("tbody")
 
+// Carrega o botao de sair
+const backButton = document.getElementById("sair")
+backButton.addEventListener("click", () => {
+    localStorage.removeItem("token") // Remove o token aluno do localStorage
+    window.location.href = "../HTML/login.html"
+})
+
 //pega o token do localStorage
 const token = localStorage.getItem("token")
 
