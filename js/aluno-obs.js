@@ -1,6 +1,12 @@
 //carrega o elemento html para inserir os blocos de observações
 const obsContainer = document.querySelector(".cards-container")
 
+// Carrega o botao de voltar
+const backButton = document.getElementById("back-to-home")
+backButton.addEventListener("click", () => {
+    window.location.href = "../HTML/crud-base.html"
+})
+
 //pega o token do localStorage
 const token = localStorage.getItem("token")
 
