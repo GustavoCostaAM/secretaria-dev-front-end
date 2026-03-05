@@ -98,6 +98,7 @@ async function openEditNotes() {
                     }
 
                     //após criar os assessments, atualiza os dados do aluno
+                    console.log("filtrando o boletim")
                     const secondResponse = await fetch(getStudentDataURL() + filter, {
                         method: "GET",
                         headers: {
@@ -105,6 +106,7 @@ async function openEditNotes() {
                             "Authorization": `Bearer ${token}`
                         },
                     })
+                    console.log("filtro feito")
 
                     if (secondResponse.ok) {
                         data = await secondResponse.json()
@@ -156,7 +158,10 @@ async function openEditNotes() {
 
 //funcao de criar assessments com o back
 async function createDefaultAssessments(studentId) {
-    const response1 = await createAssessment(studentId)
+    const [response1, response2] = await Promise.all([
+        createAssessment(studentId),
+        createAssessment(studentId)
+    ])
 
     if (!response1.ok) {
         if (handleSessionExpired(response1)) {
@@ -164,9 +169,6 @@ async function createDefaultAssessments(studentId) {
         }
         return false
     }
-
-    //caso tenha conseguido criar, devemos criar o segundo assessment
-    const response2 = await createAssessment(studentId)
 
     if (!response2.ok) {
         if (handleSessionExpired(response2)) {
