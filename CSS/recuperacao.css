@@ -70,3 +70,28 @@ button{
     border: none;
     border-radius: 8px;
 }
+
+.token-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.token-box p{
+    color: var(--faint-black);
+    font-size: 30px;
+}
+
+.token-box input{
+    text-align: center;
+    font-size: 30px;
+    
+    border: var(--faint-black) solid 2px;
+    border-radius: 8px;
+    width: 40px;
+    height: 50px;
+    
+    text-transform: uppercase;
+}

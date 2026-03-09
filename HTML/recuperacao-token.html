@@ -13,20 +13,26 @@
     <main>
         <img src="../assets/opaco_logo.svg" class="logo">
         <div>
-            <h1>Recuperação de Senha</h1>
-            <p>Para recuperar sua conta, um código será enviado ao seu email.</p>
+            <h1>Insira o código</h1>
         </div>
         <br>
         <form action="" method="">
-            <div class="input-box">
-                <img src="../assets/icons/email-icon.svg">
-                <input type="email" placeholder="Digite seu email aqui" required>
+            <div class="token-box">
+                <input type="text" maxlength="1" required>
+                <input type="text" maxlength="1" required>
+                <input type="text" maxlength="1" required>
+                <input type="text" maxlength="1" required>
+                <input type="text" maxlength="1" required>
+                <input type="text" maxlength="1" required>
             </div>
+            <p>Um token foi enviado ao email fornecido, insira-o aqui para redefinir sua senha</p>
             <br>
+            
             <button type="submit">
                 <strong>Enviar Código</strong>
             </button>
         </form>
     </main>
+    <script src="../js/token-input.js"></script>
 </body>
 </html>
