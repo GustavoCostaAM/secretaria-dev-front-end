@@ -13,26 +13,22 @@
     <main>
         <img src="../assets/opaco_logo.svg" class="logo">
         <div>
-            <h1>Insira o código</h1>
+            <h1>Redefinir sua Senha</h1>
+            <p>Insira abaixo sua nova senha</p>
         </div>
-        <br>
-        <form action="" method="">
-            <div class="token-box">
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
+        <form action="" method="" id="senhas">
+            <div class="input-box">
+                <img src="../assets/icons/password-icon.svg">
+                <input type="password" placeholder="Digite sua nova senha" required>
             </div>
-            <p>Um token foi enviado ao email fornecido, insira-o aqui para redefinir sua senha</p>
-            <br>
-            
+            <div class="input-box">
+                <img src="../assets/icons/password-icon.svg">
+                <input type="password" placeholder="Digite novamente" required>
+            </div>
             <button type="submit">
                 <strong>Enviar Código</strong>
             </button>
         </form>
     </main>
-    <script src="../js/token-input.js"></script>
 </body>
 </html>

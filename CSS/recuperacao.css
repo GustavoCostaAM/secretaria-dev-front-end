@@ -19,7 +19,7 @@ main{
     min-width: 440px;
 
     height: 50vh;
-    min-height: 500px;
+    min-height: 520px;
     border-radius: 10px;
     border: none;
 
@@ -94,4 +94,11 @@ button{
     height: 50px;
     
     text-transform: uppercase;
+}
+
+#senhas{
+    margin-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
 }
