@@ -42,6 +42,15 @@ async function getUsersData() {
                     <td>${element.email}</td>
                     <td>${element.username}</td>
                     <td>
+                        ${
+                            element.role === "STUDENT"
+                            ? "Aluno"
+                            : element.role === "TEACHER"
+                            ? "Professor"
+                            : "Administrador"
+                        }
+                    </td>
+                    <td>
                         <button class="edit register" data-id="${element.id}" onclick="openDialog('edit-register')">
                             ✏️
                         </button>
