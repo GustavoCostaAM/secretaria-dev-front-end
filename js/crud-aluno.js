@@ -65,6 +65,11 @@ async function loadStudentData(token, filter) {
                     <td>${element.nota2}</td>
                     <td>${element.media}</td>
                     <td>${element.aprovado ? 'Aprovado' : 'Reprovado'}</td>
+                    <td>
+                        <button class="button observation" onclick="openDialog('obs-popup')">
+                        <img src="../assets/icones/fi-br-comment-info.svg">
+                        </button>
+                    <td>
                 </tr>`
             });
 
