@@ -34,8 +34,16 @@ function getListByRoleURL(role){
     return usePath + `api/users/listByRole?role=${role}`
 }
 
+function getUpdateUserURL(userId){
+    return usePath + `api/users/${userId}`
+}
+
 function getSendGradesURL(){
     return usePath + "api/grades/sendGrades"
+}
+
+function getUserByIdURL(userId){
+    return usePath + `api/users/${userId}`
 }
 
 function handleSessionExpired(response) {

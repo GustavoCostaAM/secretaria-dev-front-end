@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/crud.css">
 
-    <title>Opaco - Area do Aluno</title>
+    <title>Opaco - Área do Aluno</title>
 </head>
 
 <body>
@@ -85,30 +85,28 @@
         <button class="close" onclick="closeDialog('edit-register')"><img
                 src="../assets/icones/close-button.svg"></button>
         <h1>Editar Registro</h1>
-        <form action="">
+        <form id="editUserForm">
+
+            <input type="hidden" id="edit-user-id">
+        
             <label for="name">Nome:</label>
-            <input type="text" name="name">
-
+            <input type="text" id="name">
+        
             <label for="email">Email:</label>
-            <input type="email" name="email">
-
-            <label for="role">Cargo:</label>
-            <select name="role">
-                <option value="">ESTUDANTE</option>
-                <option value="">PROFESSOR</option>
-                <option value="">ADMINISTRADOR</option>
-            </select>
-
-            <label for="">Senha:</label>
-            <input type="password">
+            <input type="email" id="email">
+        
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+        
             <button type="submit" class="button">
                 Atualizar
             </button>
+        
         </form>
     </dialog>
 
     <script src="../js/util.js"></script>
-    <script src="../js/crud-adimin.js"></script>
+    <script src="../js/crud-admin.js"></script>
     <script src="../js/popup.js"></script>
 </body>
 
