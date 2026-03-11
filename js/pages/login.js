@@ -1,7 +1,6 @@
 //verifica se o token existe
 if (localStorage.getItem("token")) {
-    //se existir, redireciona para a página principal do crud
-    window.location.href = "crud-base.html"
+    window.location.href = "aluno.html"
 }
 
 //carrega elementos do formulario
@@ -40,15 +39,14 @@ form.addEventListener("click", async function (event) {
         //leva para o fluxo correto de acordo com a role
 
         if (data.role === "ADM") {
-            window.location.href = "crud-admin.html"
+            window.location.href = "admin.html"
         }else if(data.role === "TEACHER"){
             //salva o subject do professor no localStorage para usar na tela de professor
             localStorage.setItem("subject", data.subject)
 
-            window.location.href = "crud-professor.html"
+            window.location.href = "professor.html"
         }else{
-            //nesse ponto, o usuário é um aluno
-            window.location.href = "crud-base.html"
+            window.location.href = "aluno.html"
         }
 
     }else {

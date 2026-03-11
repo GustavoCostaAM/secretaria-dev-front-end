@@ -1,0 +1,65 @@
+
+/*
+1. Prevent padding and border from affecting element width.
+2. Allow adding a border to an element by just adding a border-width.
+*/
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+html,
+:host {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  line-height: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}

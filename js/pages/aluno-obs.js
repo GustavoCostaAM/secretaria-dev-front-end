@@ -4,7 +4,7 @@ const obsContainer = document.querySelector(".cards-container")
 // Carrega o botao de voltar
 const backButton = document.getElementById("back-to-home")
 backButton.addEventListener("click", () => {
-    window.location.href = "../HTML/crud-base.html"
+    window.location.href = "aluno.html"
 })
 
 //pega o token do localStorage

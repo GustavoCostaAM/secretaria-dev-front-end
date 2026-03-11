@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages/professor.css">
+    <title>Opaco - Área do Professor</title>
+</head>
+
+<body class="dashboard-page">
+    <aside class="dashboard-sidebar">
+        <img src="assets/images/mini_logo.svg" class="sidebar-minilogo" alt="Logo Opaco" width="75">
+        <nav>
+            <a href="professor.html" class="aside-button" aria-label="Início">
+                <img src="assets/icons/home-icon.svg" alt="" width="35">
+            </a>
+            <button id="sair" type="button">Sair</button>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="page-header">
+            <img class="dashboard-logo" src="assets/images/opaco_logo.svg" alt="Logo Opaco">
+        </header>
+        <hr>
+
+        <section class="content-section">
+            <h1>Bem-vindo de volta!</h1>
+            <a href="aluno-obs.html"><button class="button">Ver Observações</button></a>
+        </section>
+
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Boletim</h2>
+                <div id="search-div">
+                    <form action="" method="get">
+                        <input type="search" id="search" placeholder="Buscar por matéria" aria-label="Buscar">
+                    </form>
+                </div>
+            </div>
+            <hr>
+
+            <div class="table-wrap">
+                <table class="table-boletim" id="table">
+                    <thead class="table-header">
+                        <tr>
+                            <th>Matrícula</th>
+                            <th>Nome</th>
+                            <th>Apelido</th>
+                            <th>Email</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr class="table-register">
+                            <td>12340</td>
+                            <td>Aristeu da Silva</td>
+                            <td>Aris</td>
+                            <td>aristeu@email.com</td>
+                            <td>
+                                <button class="button observation" onclick="openDialog('obs-popup')" type="button">
+                                    <img src="assets/icons/fi-br-comment-info.svg" alt="Observação">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="obs-popup">
+        <div>
+            <button class="close" type="button" onclick="closeDialog('obs-popup')">
+                <img src="assets/icons/close-button.svg" alt="Fechar">
+            </button>
+            <h2 id="popup-aluno">Boletim de Aristeu da Silva</h2>
+            <hr>
+            <label for="popup-n1">Nota 1:</label>
+            <input type="number" name="n1" id="popup-n1" min="0" max="10" step="0.5">
+            <label for="popup-n2">Nota 2:</label>
+            <input type="number" name="n2" id="popup-n2" min="0" max="10" step="0.5">
+            <hr>
+            <div>
+                <h3>Observação</h3>
+                <textarea class="comment-box" id="popup-observacao">Hellooo</textarea>
+            </div>
+            <button type="submit" class="button">Atualizar</button>
+        </div>
+    </dialog>
+
+    <script src="js/core/utils.js"></script>
+    <script src="js/pages/professor.js"></script>
+    <script src="js/core/popup.js"></script>
+</body>
+
+</html>

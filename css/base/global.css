@@ -1,0 +1,26 @@
+:root {
+    --gray-900: #1e1e1e;
+    --text-default-default: var(--gray-900);
+    --gray-500: #757575;
+    --margin-sm: 16px;
+    --margin-md: 32px;
+}
+
+* {
+    --min-screen-size: 430;
+    --max-screen-size: 1440;
+}
+
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+.bold {
+    font-family: 'Jost';
+    font-weight: 600;
+}
+
+.hover-bright:hover {
+    filter: brightness(1.2);
+}

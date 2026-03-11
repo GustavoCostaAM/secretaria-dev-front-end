@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="css/base/colors.css">
+    <link rel="stylesheet" href="css/base/fonts.css">
+    <link rel="stylesheet" href="css/pages/aluno.css">
+    <link rel="stylesheet" href="css/pages/login.css">
     <title>Opaco - Login</title>
 </head>
 
 <body>
     <div class="login-content">
-        <img src="/assets/opaco_logo.svg" alt="Opaco Logo" class="login-logo">
+        <img src="assets/images/opaco_logo.svg" alt="Opaco Logo" class="login-logo">
         <form action="#" class="login-form">
             <div class="form-header">
                 <h2 class="form-title">Bem vindo de volta!</h2>
@@ -23,7 +23,7 @@
             <div class="input-group">
                 <label class="login-label" for="username">Username</label>
                 <div class="input-field">
-                    <span class="icon"><img src="/assets/icons/face-icon.svg" alt=""></span>
+                    <span class="icon"><img src="assets/icons/face-icon.svg" alt=""></span>
                     <input type="username" id="username" class="login-input" placeholder="Insira seu nome de usuário">
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="input-group">
                 <label for="password" class = "login-label">Senha</label>
                 <div class="input-field">
-                    <span class="icon"><img src="/assets/icons/password-icon.svg" alt=""></span>
+                    <span class="icon"><img src="assets/icons/password-icon.svg" alt=""></span>
                     <input type="password" id="password" class="login-input" placeholder="Insira sua senha">
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <p>Não tem uma conta ainda? <a href="signup.html" class="link-highlight">Registrar-se</a></p>
             </div>
             <a href="#" class="admin-login">
-                <span class="icon"><img src="/assets/icons/admin-icon.svg" alt=""></span> <span>Fazer login como administrador</span>
+                <span class="icon"><img src="assets/icons/admin-icon.svg" alt=""></span> <span>Fazer login como administrador</span>
             </a>
         </form>
     </div>
@@ -58,7 +58,7 @@
 
     </div>
 
-    <script src="../js/util.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/pages/login.js"></script>
 </body>
 </html>

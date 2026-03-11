@@ -6,16 +6,16 @@ const tbody = table.querySelector("tbody")
 const backButton = document.getElementById("sair")
 backButton.addEventListener("click", () => {
     localStorage.removeItem("token") // Remove o token aluno do localStorage
-    window.location.href = "../HTML/login.html"
+    window.location.href = "login.html"
 })
 
 //pega o token do localStorage
 const token = localStorage.getItem("token")
 
 //se o token não existir, redireciona para a página de login
-if (!token) {
-    window.location.href = "login.html"
-}
+// if (!token) {
+//     window.location.href = "login.html"
+// }
 
 loadStudentData(token, "") //load de notas padrão (sem filtro)
 
@@ -35,9 +35,7 @@ filterInput.addEventListener("change", function (event) {
 
 //listagem das informações do aluno
 async function loadStudentData(token, filter) {
-    //faz requisição para API do backend
     if (filter == "") {
-        //caso sem filtro (busca todos)
         header = {
             "Authorization": "Bearer " + token,
             "Content-Type": "application/json"
@@ -49,13 +47,10 @@ async function loadStudentData(token, filter) {
         })
 
         if (response.ok) {
-            //caso de sucesso
             const data = await response.json()
 
-            //limpa o tbody para evitar duplicação
             tbody.innerHTML = ""
 
-            //preenche o tbody com os dados do aluno
             console.log(data)
 
             Object.values(data).forEach(element => {
@@ -73,7 +68,6 @@ async function loadStudentData(token, filter) {
             return
         }
     } else {
-        //fazendo casos com filtro (padrao é a busca por máteria)
         const formatedFilter = "filtro=subject=" + filter.toLowerCase()
 
         header = {
@@ -87,17 +81,14 @@ async function loadStudentData(token, filter) {
         })
 
         if (response.ok) {
-            //caso de sucesso
             const data = await response.json()
 
-            //limpa o tbody para evitar duplicação
             tbody.innerHTML = ""
 
-            //preenche o tbody com os dados do aluno
             console.log(data)
 
             Object.values(data).forEach(element => {
-                tbody.innerHTML += `<tr>
+                tbody.innerHTML += `<tr class="table-register">
                     <td>${element.disciplina}</td>
                     <td>${element.nota1}</td>
                     <td>${element.nota2}</td>

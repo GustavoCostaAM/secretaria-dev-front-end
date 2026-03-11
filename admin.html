@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages/admin.css">
+    <title>Opaco - Área do Administrador</title>
+</head>
+
+<body class="dashboard-page">
+    <aside class="dashboard-sidebar">
+        <img src="assets/images/mini_logo.svg" class="sidebar-minilogo" alt="Logo Opaco" width="75">
+        <nav>
+            <a href="admin.html" class="aside-button" aria-label="Início">
+                <img src="assets/icons/home-icon.svg" alt="" width="35">
+            </a>
+            <button id="sair" type="button">Sair</button>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="page-header">
+            <img class="dashboard-logo" src="assets/images/opaco_logo.svg" alt="Logo Opaco">
+        </header>
+        <hr>
+
+        <section class="content-section">
+            <h1>Olá, administrador!</h1>
+        </section>
+
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Usuários</h2>
+                <div id="search-div">
+                    <form action="" method="get">
+                        <input type="search" id="search" placeholder="Buscar por matéria" aria-label="Buscar">
+                    </form>
+                </div>
+            </div>
+            <hr>
+
+            <div class="table-wrap">
+                <table class="table-boletim">
+                    <thead class="table-header">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-infos">
+                        <tr class="table-register">
+                            <td>123</td>
+                            <td>Artur de Oliveira</td>
+                            <td>a***@hotmail.com</td>
+                            <td>********</td>
+                            <td>STUDENT</td>
+                            <td>
+                                <button class="edit register" onclick="openDialog('edit-register')" type="button">
+                                    <img class="icon" src="assets/icons/edit.svg" alt="Editar">
+                                </button>
+                                <button class="delete register" type="button">
+                                    <img class="icon" src="assets/icons/delete.svg" alt="Excluir">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="edit-register">
+        <form action="">
+            <button class="close" type="button" onclick="closeDialog('edit-register')">
+                <img src="assets/icons/close-button.svg" alt="Fechar">
+            </button>
+            <h2>Editar Registro</h2>
+            <label for="name">Nome:</label>
+            <input type="text" name="name" id="name">
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+
+            <label for="role">Cargo:</label>
+            <select name="role" id="role">
+                <option value="STUDENT">Estudante</option>
+                <option value="TEACHER">Professor</option>
+                <option value="ADM">Administrador</option>
+            </select>
+
+            <label for="password">Senha:</label>
+            <input type="password" name="password" id="password">
+
+            <button type="submit" class="button">Atualizar</button>
+        </form>
+    </dialog>
+
+    <script src="js/core/utils.js"></script>
+    <script src="js/pages/admin.js"></script>
+    <script src="js/core/popup.js"></script>
+</body>
+
+</html>

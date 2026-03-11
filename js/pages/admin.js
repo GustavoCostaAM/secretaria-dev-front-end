@@ -5,19 +5,14 @@ const token = localStorage.getItem("token")
 const backButton = document.getElementById("sair")
 backButton.addEventListener("click", () => {
     localStorage.removeItem("token") // Remove o token aluno do localStorage
-    window.location.href = "../HTML/login.html"
-})
-
-if (!token) {
     window.location.href = "login.html"
-}
+})
 
 //pega os elementos da pagina de adm
 const table = document.querySelector("#table-infos")
 
 //carrega os alunos conectados
 async function getUsersData() {
-    //envia a req para o back
     response = await fetch(getUsersURL(), {
         method: "GET",
         headers: {
@@ -26,15 +21,12 @@ async function getUsersData() {
         }
     })
 
-    //le a resposta
     if (response.ok) {
         const data = await response.json()
         console.log(data)
 
-        //limpa a tabela
         table.innerHTML = ""
 
-        //preenche a tabela
         Object.values(data).forEach(element => {
             table.innerHTML += `<tr class="table-register">
                     <td>${element.id}</td>
@@ -52,7 +44,6 @@ async function getUsersData() {
                 </tr>`
         });
 
-        //após preencher a tabela, adiciona os listeners de deletar
         loadDeleteButtons()
 
         console.log("fluxo terminou")
@@ -61,12 +52,9 @@ async function getUsersData() {
     }
 }
 
-//adiciona event listener para deletar usuarios (desativar)
 async function loadDeleteButtons() {
-    //pega os botoes
     const deleteButtons = document.querySelectorAll(".delete.register")
 
-    //adiciona o event listener para cada botao
     deleteButtons.forEach(button => {
         button.addEventListener("click", async () => {
             const userId = button.getAttribute("data-id")
@@ -79,7 +67,6 @@ async function loadDeleteButtons() {
             })
 
             if (response.ok) {
-                //recarrega os dados dos usuarios
                 getUsersData()
 
                 console.log("Usuario deletado com sucesso")
@@ -90,5 +77,4 @@ async function loadDeleteButtons() {
     })
 }
 
-//carrega os dados dos usuarios assim que a pagina é aberta
 getUsersData()

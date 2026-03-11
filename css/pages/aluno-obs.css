@@ -1,0 +1,103 @@
+body {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 86%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(229, 229, 229, 0.8);
+}
+
+.long-logo {
+    height: 72px;
+    width: 144px;
+    margin: 0.6rem 4rem;
+}
+
+.divider {
+    opacity: 0.15;
+    height: 0;
+    border-top: 2px solid #333;
+    border-radius: 50%;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background-color: #fff;
+    border-right: 2px solid rgba(51, 51, 51, 0.25);
+}
+
+.obs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding-block: 1.6rem;
+    font-family: 'Inter';
+    background-color: #fff;
+    margin: 1.5rem 2.5rem;
+    border-radius: 14px;
+    border: 2px solid rgba(160, 160, 160, 0.5);
+}
+
+.header-obs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-inline: 1.5rem;
+}
+
+.header-title {
+    opacity: 0.8;
+    width: 60%;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.6rem;
+    background-color: rgba(229, 229, 229, 0.8);
+    padding: 1.4rem;
+    margin: 0.4rem 2rem;
+    border-radius: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    text-align: left;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.card-description {
+    margin-top: 1px;
+    color: #666;
+    font-size: 14.89px;
+}
