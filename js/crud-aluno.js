@@ -69,7 +69,7 @@ async function loadStudentData(token, filter) {
                         <button class="button observation" onclick="openDialog('obs-popup')">
                         <img src="../assets/icones/fi-br-comment-info.svg">
                         </button>
-                    <td>
+                    </td>
                 </tr>`
             });
 
