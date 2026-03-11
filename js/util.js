@@ -44,6 +44,8 @@ function getSendGradesURL(){
 
 function getUserByIdURL(userId){
     return usePath + `api/users/${userId}`
+function getUpdateGradesURL() {
+    return usePath + "api/grades/updateGrades"
 }
 
 function handleSessionExpired(response) {
@@ -55,4 +57,5 @@ function handleSessionExpired(response) {
     }
 
     return false
+}
 }
