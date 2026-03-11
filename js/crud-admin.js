@@ -38,10 +38,18 @@ async function getUsersData() {
         Object.values(data).forEach(element => {
             table.innerHTML += `<tr class="table-register">
                     <td>${element.id}</td>
-                    <td>${element.username}</td>
+                    <td>${element.name}</td>
                     <td>${element.email}</td>
-                    <td>***********</td>
-                    <td>${element.role}</td>
+                    <td>${element.username}</td>
+                    <td>
+                        ${
+                            element.role === "STUDENT"
+                            ? "Aluno"
+                            : element.role === "TEACHER"
+                            ? "Professor"
+                            : "Administrador"
+                        }
+                    </td>
                     <td>
                         <button class="edit register" data-id="${element.id}" onclick="openDialog('edit-register')">
                             ✏️
@@ -55,6 +63,7 @@ async function getUsersData() {
 
         //após preencher a tabela, adiciona os listeners de deletar
         loadDeleteButtons()
+        loadEditButtons()
 
         console.log("fluxo terminou")
     } else if (handleSessionExpired(response)) {
@@ -88,6 +97,77 @@ async function loadDeleteButtons() {
                 return
             }
         })
+    })
+}
+
+async function loadEditButtons() {
+
+    const editButtons = document.querySelectorAll(".edit.register")
+
+    editButtons.forEach(button => {
+        button.addEventListener("click", async () => {
+
+            const userId = button.getAttribute("data-id")
+
+            const response = await fetch(getUserByIdURL(userId), {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "authorization": `Bearer ${token}`
+                }
+            })
+
+            //adiona event listener de edição
+            loadEditFormSubmit()
+
+            if (response.ok) {
+                const user = await response.json()
+            
+                document.getElementById("edit-user-id").value = user.id
+                document.getElementById("name").value = user.name || ""
+                document.getElementById("email").value = user.email || ""
+                document.getElementById("username").value = user.username || ""          
+                document.getElementById("edit-register").showModal()
+
+            } else if (handleSessionExpired(response)) {
+                return
+            }
+        })
+    })
+}
+
+function loadEditFormSubmit() {
+
+    const form = document.getElementById("editUserForm")
+
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault()
+
+        const userId = document.getElementById("edit-user-id").value
+        const name = document.getElementById("name").value
+        const email = document.getElementById("email").value
+        const username = document.getElementById("username").value
+
+        const response = await fetch(getUpdateUserURL(userId), {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                username
+            })
+        })
+
+        if (response.ok) {
+            getUsersData()
+            document.getElementById("edit-register").close()
+            console.log("Usuário atualizado com sucesso")
+        } else if (handleSessionExpired(response)) {
+            return
+        }
     })
 }
 
