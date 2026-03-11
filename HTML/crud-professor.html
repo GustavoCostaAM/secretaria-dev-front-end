@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/crud.css">
 
-    <title>Opaco - Area do Aluno</title>
+    <title>Opaco - Area do Professor</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             <main>
                 <div class="content-box">
                     <h1>Bem-vindo de volta!</h1>
-                    <a href="aluno-obs.html"><button class="button">Ver Observações</button></a>
+                    <p>Sua matéria: <strong id="teachers-subject"></strong></p>
                 </div>
                 <div class="content-box">
                     <div class="crud-header">
@@ -93,7 +93,7 @@
             <hr>
             <div>
                 <h1>Observação</h1>
-                <textarea class="comment-box" id="popup-observacao">Hellooo</textarea>
+                <textarea class="comment-box" id="popup-observacao" placeholder="Digite aqui sua observação"></textarea>
             </div>
             <button type="submit" class="button" id="edit-grades-button">
                 Atualizar
