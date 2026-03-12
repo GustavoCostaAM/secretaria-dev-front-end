@@ -11,14 +11,9 @@ if (!token) {
     window.location.href = 'login.html';
 }
 
-//pega os elementos da tabela e do filtro
-const tbody = document.querySelector("#tbody")
-const filterInput = document.querySelector("#search")
-
 //carrega os dados dos alunos
-async function loadStudentsData(token, filter) {
+async function loadStudentsData(token) {
     //faz a requisição para o backend
-    if (!filter) {
         //filtro basico para pegar os alunos
         const formatedFilter = "STUDENT"
 
@@ -60,7 +55,6 @@ async function loadStudentsData(token, filter) {
         } else if (handleSessionExpired(response)) {
             return
         }
-    }
 }
 
 //adiciona event listener para abrir o editar as notas do aluno
