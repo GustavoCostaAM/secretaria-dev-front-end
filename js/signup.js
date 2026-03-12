@@ -3,6 +3,7 @@ inputName = document.querySelector("#nome")
 inputUserName = document.querySelector("#username")
 inputEmail = document.querySelector("#email")
 inputPassword = document.querySelector("#password")
+inputEnrollment = document.querySelector("#enrollment")
 
 //seta o botão de submit
 submitButton = document.querySelector("#submit")
@@ -13,6 +14,7 @@ submitButton.addEventListener("click", async function(event) {
 
     //cria um objeto com os dados do formulário
     const userData = {
+        enrollmentCode: inputEnrollment.value,
         name: inputName.value,
         username: inputUserName.value,
         email: inputEmail.value,
