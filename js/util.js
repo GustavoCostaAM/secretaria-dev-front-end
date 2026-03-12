@@ -61,6 +61,10 @@ function getUpdatePasswordURL() {
     return usePath + "api/redefine/resetPassword"
 }
 
+function getSubjectsURL() {
+    return usePath + "api/subjects/list"
+}
+
 function handleSessionExpired(response) {
     if (response.status === 403 || response.status === 401) {
         window.alert("Sessão expirada, faça login novamente.")
@@ -73,29 +77,42 @@ function handleSessionExpired(response) {
 }
 
 
-//carrega os elementos do html para listagem
 const table = document.querySelector("#table")
-const tbody = table.querySelector("tbody")
-
-//adiciona event listener para o campo de filtro
-const filterInput = document.querySelector("#search")
-const searchForm = document.querySelector("#search-div form")
-
-searchForm.addEventListener("submit", function (event) {
-    event.preventDefault() //impede que o formulario reinicie a pagina
-})
-
-filterInput.addEventListener("input", function (event) {
-    const filterValue = event.target.value.toLowerCase().trim()
-    filterTable(filterValue)
-    }
-)
-
-function filterTable(filterText) {
-    const rows = tbody.querySelectorAll("tr")
     
-    rows.forEach(row => {
+    if (table) {
+        const tbody = table.querySelector("tbody")
         
+        if (tbody) {
+            // Configura o filtro apenas se os elementos existirem
+            const filterInput = document.querySelector("#search")
+            const searchForm = document.querySelector("#search-div form")
+            
+            if (searchForm) {
+                searchForm.addEventListener("submit", function (event) {
+                    event.preventDefault() //impede que o formulario reinicie a pagina
+                })
+            }
+            
+            if (filterInput) {
+                filterInput.addEventListener("input", function (event) {
+                    const filterValue = event.target.value.toLowerCase().trim()
+                    filterTable(filterValue, tbody)
+                })
+            }
+        }
+    }
+
+function detectProfessorPage() {
+    if (window.location.href.includes("professor") || 
+        window.location.href.includes("crud-professor")) {
+        return true
+    } return false
+}
+function filterTable(filterText, tbody) {
+    const rows = tbody.querySelectorAll("tr")
+    const isProfessorPage = detectProfessorPage() 
+
+    rows.forEach(row => {
             if(isProfessorPage){
                 const subjectTd = row.querySelector("td:first-child")        
                 const subjectName = subjectTd.textContent.toLowerCase()
@@ -126,12 +143,4 @@ function filterTable(filterText) {
 
         }
     )
-}
-
-const isProfessorPage = detectProfessorPage()
-function detectProfessorPage() {
-    if (window.location.href.includes("professor") || 
-        window.location.href.includes("crud-professor")) {
-        return true
-    } return false
 }
