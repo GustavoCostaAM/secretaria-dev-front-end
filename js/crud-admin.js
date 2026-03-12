@@ -176,3 +176,38 @@ function loadEditFormSubmit() {
 
 //carrega os dados dos usuarios assim que a pagina é aberta
 getUsersData()
+
+
+//carrega as materias para o dropList de criação de professores
+const subjectDropList = document.getElementById("subjectDropList")
+
+async function loadSubjects() {
+    if (!subjectDropList) {
+        console.error("Elemento subjectDropList nao encontrado no HTML")
+        return
+    }
+
+    response = await fetch(getSubjectsURL(), {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`
+        }
+    })
+
+    if (response.ok) {
+        const subjects = await response.json()
+     
+        //adiciona elementos ao droplist
+        subjects.forEach(subject => {
+            const option = document.createElement("option")
+            option.value = subject.id
+            option.textContent = subject.name
+            subjectDropList.appendChild(option)
+        })
+    }
+
+    console.log(response)
+}
+
+loadSubjects()

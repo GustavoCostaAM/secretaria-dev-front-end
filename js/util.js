@@ -61,6 +61,10 @@ function getUpdatePasswordURL() {
     return usePath + "api/redefine/resetPassword"
 }
 
+function getSubjectsURL() {
+    return usePath + "api/subjects/list"
+}
+
 function handleSessionExpired(response) {
     if (response.status === 403 || response.status === 401) {
         window.alert("Sessão expirada, faça login novamente.")
