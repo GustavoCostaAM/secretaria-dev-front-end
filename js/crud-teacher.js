@@ -252,3 +252,6 @@ async function addUpdateButton(){
 
 //carrega os dados dos alunos ao abrir a página
 loadStudentsData(token)
+
+//Alterar 
+document.getElementById("teachers-subject").innerHTML = localStorage.getItem("subject")
