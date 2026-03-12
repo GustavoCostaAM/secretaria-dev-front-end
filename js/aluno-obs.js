@@ -14,10 +14,6 @@ if (!token) {
     window.location.href = "login.html"
 }
 
-obsContainer.innerHTML = "" //limpa o container para evitar duplicação
-loadObservations() //carrega as observações do aluno
-
-
 //método para carregar as observações do aluno
 async function loadObservations() {
     const header = {
@@ -36,10 +32,15 @@ async function loadObservations() {
         Object.values(data).forEach(element => {
             obsContainer.innerHTML += `<div class="card">
             <h2 class="card-title">${element.disciplina}</h2>
-            <p class="card-description">${element.observacao}</p>
+            <p class="card-description">${element.observations}</p>
         </div>`
         })
+
+        console.log(data)
     } else if (handleSessionExpired(response)) {
         return
     }
 }
+
+obsContainer.innerHTML = "" //limpa o container para evitar duplicação
+loadObservations() //carrega as observações do aluno
