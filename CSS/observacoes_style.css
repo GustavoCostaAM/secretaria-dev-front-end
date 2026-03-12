@@ -1,19 +1,29 @@
+@import url("./colors.css");
+
 body {
-	position: relative;
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	/* position: relative;
+	min-height: 100%; */
+	display: grid;
+	grid-template-columns: 100px auto;
+	height: auto;
+}
+
+hr{
+    border: 1px solid var(--faint-black);
 }
 
 /* Parte de cima */
 main {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: top;
 
-	width: 86%; min-height: 100%;
-	position: absolute; top: 0; right: 0;
-	background-color: rgba(229, 229, 229, 0.8);
+	/* min-height: 100%; */
+	/* position: absolute; top: 0; right: 0; */
+	background-color: var(--white);
 }
 
 .long-logo {
@@ -24,17 +34,8 @@ main {
 .divider {
 	opacity: 0.15;
 	height: 0;
-	border-top: 2px solid #333;
+	border-top: 2px solid var(--faint-gray);
 	border-radius: 50%;
-}
-
-/* Barra lateral */
-.sidebar {
-	position: absolute;
-	top: 0; left: 0;
-	width: 100px; height: 100%;
-	background-color: #fff;
-	border-right: 2px solid rgba(51, 51, 51, 0.25);
 }
 
 /* Parte dos Cards */
@@ -176,4 +177,24 @@ main {
 	body {
 		padding-inline: 10px;
 	}
+}
+
+aside{
+    height: 100vh;
+    background-color: var(--white);
+    border-right: 2px solid var(--faint-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+
+	padding: 10px;
+}
+
+.aside-button{
+    background-color: var(--faint-gray);
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    width: 75px;
 }
