@@ -44,8 +44,21 @@ function getSendGradesURL(){
 
 function getUserByIdURL(userId){
     return usePath + `api/users/${userId}`
+}
 function getUpdateGradesURL() {
     return usePath + "api/grades/updateGrades"
+}
+
+function getRecoveryMailURL() {
+    return usePath + "api/redefine/sendRecoveryMail"
+}
+
+function getValidateRecoveryCodeURL(code) {
+    return usePath + "api/redefine/recover/" + code
+}
+
+function getUpdatePasswordURL() {
+    return usePath + "api/redefine/resetPassword"
 }
 
 function handleSessionExpired(response) {
@@ -57,5 +70,4 @@ function handleSessionExpired(response) {
     }
 
     return false
-}
 }
