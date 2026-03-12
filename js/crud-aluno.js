@@ -15,43 +15,6 @@ if (!token) {
 
 loadStudentData(token) //load de notas padrão
 
-
-//carrega os elementos do html para listagem
-const table = document.querySelector("#table")
-const tbody = table.querySelector("tbody")
-
-//adiciona event listener para o campo de filtro
-const filterInput = document.querySelector("#search")
-const searchForm = document.querySelector("#search-div form")
-
-searchForm.addEventListener("submit", function (event) {
-    event.preventDefault() //impede que o formulario reinicie a pagina
-})
-
-filterInput.addEventListener("input", function (event) {
-    const filterValue = event.target.value.toLowerCase().trim()
-    filterTable(filterValue)
-    }
-)
-
-function filterTable(filterText) {
-    const rows = tbody.querySelectorAll("tr")
-    
-    rows.forEach(row => {
-        const subjectTd = row.querySelector("td:first-child")
-        
-        if (subjectTd) {
-            const subjectName = subjectTd.textContent.toLowerCase()
-            
-            if (filterText === "" || subjectName.includes(filterText)) {
-                row.classList.remove("hidden") // Mostra a linha
-            } else {
-                row.classList.add("hidden") // Esconde a linha
-            }
-        }
-    })
-}
-
 //listagem das informações do aluno
 async function loadStudentData(token) {
     //faz requisição para API do backend
@@ -60,6 +23,13 @@ async function loadStudentData(token) {
         const header = {
             "Authorization": "Bearer " + token,
             "Content-Type": "application/json"
+        }
+
+        // Define a variável tbody
+        const tbody = document.getElementById("tbody")
+        if (!tbody) {
+            console.error("Elemento tbody não encontrado!")
+            return
         }
 
         const response = await fetch(getStudentDataURL(), {
@@ -91,4 +61,4 @@ async function loadStudentData(token) {
         } else if (handleSessionExpired(response)) {
             return
         }
-    } 
+    }

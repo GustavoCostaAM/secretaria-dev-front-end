@@ -1,5 +1,6 @@
 //carrega o token do usuario
 const token = localStorage.getItem("token")
+const adminTableBody = document.querySelector("#table-infos")
 
 // Carrega o botao de sair
 const backButton = document.getElementById("sair")
@@ -11,9 +12,6 @@ backButton.addEventListener("click", () => {
 if (!token) {
     window.location.href = "login.html"
 }
-
-//pega os elementos da pagina de adm
-const table = document.querySelector("#table-infos")
 
 //carrega os alunos conectados
 async function getUsersData() {
@@ -31,12 +29,17 @@ async function getUsersData() {
         const data = await response.json()
         console.log(data)
 
+        if (!adminTableBody) {
+            console.error("Elemento #table-infos nao encontrado no HTML")
+            return
+        }
+
         //limpa a tabela
-        table.innerHTML = ""
+        adminTableBody.innerHTML = ""
 
         //preenche a tabela
         Object.values(data).forEach(element => {
-            table.innerHTML += `<tr class="table-register">
+            adminTableBody.innerHTML += `<tr class="table-register">
                     <td>${element.id}</td>
                     <td>${element.name}</td>
                     <td>${element.email}</td>
