@@ -70,7 +70,6 @@ function handleSessionExpired(response) {
     }
 
     return false
-    }
 }
 
 
