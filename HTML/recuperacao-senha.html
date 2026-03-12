@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/recuperacao.css">
     <title>Recuperação de Senha - Opaco</title>
+    <script src="../js/util.js"></script>
+    <script src="../js/recuperacao-preprocess.js"></script>
 </head>
 <body>
     <!--Adicionar um header como o da landing para retornar-->
@@ -19,16 +21,18 @@
         <form action="" method="" id="senhas">
             <div class="input-box">
                 <img src="../assets/icons/password-icon.svg">
-                <input type="password" placeholder="Digite sua nova senha" required>
+                <input type="password" placeholder="Digite sua nova senha" required id="inputNewPassword">
             </div>
             <div class="input-box">
                 <img src="../assets/icons/password-icon.svg">
-                <input type="password" placeholder="Digite novamente" required>
+                <input type="password" placeholder="Digite novamente" required id="inputConfirmPassword">
             </div>
-            <button type="submit">
+            <button type="submit" id="submitButton">
                 <strong>Enviar Código</strong>
             </button>
         </form>
     </main>
+
+    <script src="../js/recuperacao-senha.js"></script>
 </body>
 </html>

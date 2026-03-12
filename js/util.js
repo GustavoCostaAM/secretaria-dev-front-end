@@ -44,8 +44,25 @@ function getSendGradesURL(){
 
 function getUserByIdURL(userId){
     return usePath + `api/users/${userId}`
+}
 function getUpdateGradesURL() {
     return usePath + "api/grades/updateGrades"
+}
+
+function getRecoveryMailURL() {
+    return usePath + "api/redefine/sendRecoveryMail"
+}
+
+function getValidateRecoveryCodeURL(code) {
+    return usePath + "api/redefine/recover/" + code
+}
+
+function getUpdatePasswordURL() {
+    return usePath + "api/redefine/resetPassword"
+}
+
+function getSubjectsURL() {
+    return usePath + "api/subjects/list"
 }
 
 function handleSessionExpired(response) {
@@ -58,4 +75,72 @@ function handleSessionExpired(response) {
 
     return false
 }
+
+
+const table = document.querySelector("#table")
+    
+    if (table) {
+        const tbody = table.querySelector("tbody")
+        
+        if (tbody) {
+            // Configura o filtro apenas se os elementos existirem
+            const filterInput = document.querySelector("#search")
+            const searchForm = document.querySelector("#search-div form")
+            
+            if (searchForm) {
+                searchForm.addEventListener("submit", function (event) {
+                    event.preventDefault() //impede que o formulario reinicie a pagina
+                })
+            }
+            
+            if (filterInput) {
+                filterInput.addEventListener("input", function (event) {
+                    const filterValue = event.target.value.toLowerCase().trim()
+                    filterTable(filterValue, tbody)
+                })
+            }
+        }
+    }
+
+function detectProfessorPage() {
+    if (window.location.href.includes("professor") || 
+        window.location.href.includes("crud-professor")) {
+        return true
+    } return false
+}
+function filterTable(filterText, tbody) {
+    const rows = tbody.querySelectorAll("tr")
+    const isProfessorPage = detectProfessorPage() 
+
+    rows.forEach(row => {
+            if(isProfessorPage){
+                const subjectTd = row.querySelector("td:first-child")        
+                const subjectName = subjectTd.textContent.toLowerCase()
+
+                const nomeTd =  row.querySelector("td:nth-child(2)")
+                const nomeName =   nomeTd.textContent.toLowerCase()
+
+                const  apelidoTd =  row.querySelector("td:nth-child(3)")
+                const apelidoName =   apelidoTd.textContent.toLowerCase()
+
+                const  emailTd =  row.querySelector("td:nth-child(4)")
+                const emailName =   emailTd.textContent.toLowerCase()
+
+                if (filterText === "" || subjectName.includes(filterText) || nomeName.includes(filterText) || apelidoName.includes(filterText) || emailName.includes(filterText)) {
+                    row.classList.remove("hidden") // Mostra a linha
+                } else {
+                    row.classList.add("hidden") // Esconde a linha
+                }
+            } else{
+                const matriculaTd = row.querySelector("td:first-child")        
+                const matriculaName = matriculaTd.textContent.toLowerCase()
+                if (filterText === "" || matriculaName.includes(filterText)) {
+                    row.classList.remove("hidden") // Mostra a linha
+                } else {
+                    row.classList.add("hidden") // Esconde a linha
+                }
+            }
+
+        }
+    )
 }

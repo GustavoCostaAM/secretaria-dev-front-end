@@ -1,5 +1,6 @@
 //carrega o token do usuario
 const token = localStorage.getItem("token")
+const adminTableBody = document.querySelector("#table-infos")
 
 // Carrega o botao de sair
 const backButton = document.getElementById("sair")
@@ -11,9 +12,6 @@ backButton.addEventListener("click", () => {
 if (!token) {
     window.location.href = "login.html"
 }
-
-//pega os elementos da pagina de adm
-const table = document.querySelector("#table-infos")
 
 //carrega os alunos conectados
 async function getUsersData() {
@@ -31,12 +29,17 @@ async function getUsersData() {
         const data = await response.json()
         console.log(data)
 
+        if (!adminTableBody) {
+            console.error("Elemento #table-infos nao encontrado no HTML")
+            return
+        }
+
         //limpa a tabela
-        table.innerHTML = ""
+        adminTableBody.innerHTML = ""
 
         //preenche a tabela
         Object.values(data).forEach(element => {
-            table.innerHTML += `<tr class="table-register">
+            adminTableBody.innerHTML += `<tr class="table-register">
                     <td>${element.id}</td>
                     <td>${element.name}</td>
                     <td>${element.email}</td>
@@ -173,3 +176,38 @@ function loadEditFormSubmit() {
 
 //carrega os dados dos usuarios assim que a pagina é aberta
 getUsersData()
+
+
+//carrega as materias para o dropList de criação de professores
+const subjectDropList = document.getElementById("subjectDropList")
+
+async function loadSubjects() {
+    if (!subjectDropList) {
+        console.error("Elemento subjectDropList nao encontrado no HTML")
+        return
+    }
+
+    response = await fetch(getSubjectsURL(), {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`
+        }
+    })
+
+    if (response.ok) {
+        const subjects = await response.json()
+     
+        //adiciona elementos ao droplist
+        subjects.forEach(subject => {
+            const option = document.createElement("option")
+            option.value = subject.id
+            option.textContent = subject.name
+            subjectDropList.appendChild(option)
+        })
+    }
+
+    console.log(response)
+}
+
+loadSubjects()
