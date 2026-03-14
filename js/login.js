@@ -31,11 +31,15 @@ form.addEventListener("click", async function (event) {
         //caso de sucesso, pega o token retornado pela api
         const data = await response.json()
         const token = data.token
+        const id = data.id
 
         console.log(token)
 
         //guarda o token no local storage
         localStorage.setItem("token", token)
+
+        //guarda o id no local storage
+        localStorage.setItem("id", id)
 
         //leva para o fluxo correto de acordo com a role
 
