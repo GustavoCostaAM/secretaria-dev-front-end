@@ -56,10 +56,10 @@ async function getUsersData() {
                     </td>
                     <td>
                         <button class="edit register" data-id="${element.id}" onclick="openDialog('edit-register')">
-                            ✏️
+                            <img src="../assets/icons/fi-br-pencil.svg">
                         </button>
                         <button class="delete register" data-id="${element.id}">
-                            🗑️
+                            <img src="../assets/icons/fi-br-trash.svg">
                         </button>
                     </td>
                 </tr>`
