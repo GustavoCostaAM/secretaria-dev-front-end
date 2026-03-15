@@ -122,6 +122,7 @@ async function loadEditButtons() {
             })
 
             //adiona event listener de edição
+            loadRegisterFormSubmit()
             loadEditFormSubmit()
 
             if (response.ok) {
@@ -139,6 +140,44 @@ async function loadEditButtons() {
         })
     })
 }
+
+function loadRegisterFormSubmit() {
+    const form = document.getElementById("createUserForm")
+    form.addEventListener("submit", async function (event) {  
+        event.preventDefault()
+
+
+        const name = document.getElementById("register-name").value
+        const email = document.getElementById("register-email").value
+        const username = document.getElementById("register-username").value
+        const subject = Number(document.getElementById("subjectDropList").value)
+        const password = document.getElementById("register-password").value
+
+        const response = await fetch(getCreateTeacherURL(), {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                username,
+                role: "TEACHER",
+                subjectId: subject,
+                password
+            })})
+
+            if (response.ok) {
+                getUsersData()
+                document.getElementById("create-register").close()
+                document.getElementById("createUserForm").reset()
+                console.log("Usuário criado com sucesso")
+            } else if (handleSessionExpired(response)) {
+                console.log("test")
+                return
+            }
+})}
 
 function loadEditFormSubmit() {
 
@@ -179,6 +218,7 @@ function loadEditFormSubmit() {
 getUsersData()
 
 
+
 //carrega as materias para o dropList de criação de professores
 const subjectDropList = document.getElementById("subjectDropList")
 
@@ -198,9 +238,20 @@ async function loadSubjects() {
 
     if (response.ok) {
         const subjects = await response.json()
-     
-        //adiciona elementos ao droplist
-        subjects.forEach(subject => {
+        console.log(subjects)
+        const availableSubjects = subjects.filter(subject => subject.teacherName == null)
+        console.log(availableSubjects)
+        if (availableSubjects.length === 0) {
+            const option = document.createElement("option")
+            option.value = ""
+            option.textContent = "Nenhuma matéria disponível"
+            option.disabled = true
+            option.selected = true
+            subjectDropList.appendChild(option)
+            return
+        }
+    
+        availableSubjects.forEach(subject => {
             const option = document.createElement("option")
             option.value = subject.id
             option.textContent = subject.name
@@ -212,3 +263,4 @@ async function loadSubjects() {
 }
 
 loadSubjects()
+loadRegisterFormSubmit()
