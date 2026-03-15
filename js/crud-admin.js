@@ -6,6 +6,7 @@ const adminTableBody = document.querySelector("#table-infos")
 const backButton = document.getElementById("sair")
 backButton.addEventListener("click", () => {
     localStorage.removeItem("token") // Remove o token aluno do localStorage
+    localStorage.removeItem("id") // Remove o id do localStorage
     window.location.href = "../HTML/login.html"
 })
 
