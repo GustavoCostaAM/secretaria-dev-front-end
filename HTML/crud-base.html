@@ -99,12 +99,42 @@
                     libero! Dolorem, mollitia consequatur!
                 </p>
             </div>
-            
+
         </div>
     </dialog>
+
+    <div id="update-popup" hidden>
+        <div id="popup-message-container">
+            <img src="../assets/icons/fi-br-check.svg" id="popup-icon">
+            <p id="popup-message"></p>
+        </div>
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- parte para o chatbot -->
+    <button id="open-chatbot">
+        <img src="../assets/icones/fi-br-comment-info.svg" alt="chatbot">
+    </button>
+
+    <!-- mensagens -->
+    <section id="blocoMensagens">
+        <div class="userMessage">
+            <p>Mensagem mockada do usuario</p>
+        </div>
+        <div class="botMessage">
+            <p>Mensagem mockada do bot</p>
+        </div>
+
+        <form class="chatInputArea">
+            <input type="text" id="chatMessageInput" placeholder="Digite sua mensagem..." maxlength="200">
+            <button type="submit" id="chatSendButton">Enviar</button>
+        </form>
+    </section>
+
     <script src="../js/util.js"></script>
     <script src="../js/crud-aluno.js"></script>
     <script src="../js/popup.js"></script>
+    <script src="../js/chatbot.js"></script>
 </body>
 
 </html>

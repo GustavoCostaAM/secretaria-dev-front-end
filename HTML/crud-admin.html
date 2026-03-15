@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/crud.css">
 
-    <title>Opaco - Área do Aluno</title>
+    <title>Opaco - Área do Administrador</title>
 
     <style>
         .hidden {
@@ -38,7 +38,7 @@
                                 <img src="../assets/icones/create.svg" alt="criar novo registro">
                             </button>
                             <form action="" method="">
-                                <input type="search" id="search" placeholder="Buscar usuario">
+                                <input type="search" id="search" placeholder="Buscar usuario por ID">
                             </form>
                         </div>
                     </div>
@@ -114,41 +114,45 @@
     </dialog>
 
     <dialog id="create-register">
-        <button class="close" onclick="closeDialog('create-register')"><img
-                src="../assets/icones/close-button.svg"></button>
+        <button class="close" onclick="closeDialog('create-register')">
+            <img src="../assets/icones/close-button.svg" alt="Fechar">
+        </button>
+    
         <h1>Criar novo registro</h1>
+    
         <form id="createUserForm">
-
-            <!--Acho que não precisa desse mais né?-->
-            <!-- <input type="hidden" id="create-user-id"> -->
-        
-            <label for="name">Nome:</label>
-            <input type="text" id="name">
-        
-            <label for="email">Email:</label>
-            <input type="email" id="email">
-        
-            <label for="username">Username:</label>
-            <input type="text" id="username">
-
-            <label for="">Role:</label>
-            <select id="role">
-                <option value="" disabled selected hidden>Tipo de usuario</option>
-                <option value="professor">PROFESSOR</option>
-                <option value="aluno">ALUNO</option>
-                <option value="admin">ADMINISTRADOR</option>
+    
+            <label for="register-name">Nome:</label>
+            <input type="text" id="register-name" name="name" required>
+    
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" name="email" required>
+    
+            <label for="register-username">Username:</label>
+            <input type="text" id="register-username" name="username" required>
+    
+            <label for="subjectDropList" class="teacher-only">Matéria</label>
+            <select id="subjectDropList" name="teacher-subject" class="teacher-only">
+                <option value="">Selecione uma matéria</option>
             </select>
-
-            <label for="teacher-subject" class="teacher-only">Matéria</label>
-            <select name="teacher-subject" class="teacher-only" id="subjectDropList">
-                <option value=""></option>
-            </select>
-        
+    
+            <label for="register-password">Senha:</label>
+            <input type="password" id="register-password" name="password" required>
+    
             <button type="submit" class="button">
                 Criar
             </button>
+    
         </form>
     </dialog>
+
+    <div id="update-popup" hidden>
+        <div id="popup-message-container">
+            <img src="../assets/icons/fi-br-check.svg" id="popup-icon">
+            <p id="popup-message"></p>
+        </div>
+        <div id="progress-bar"></div>
+    </div>
 
     <script src="../js/util.js"></script>
     <!-- <script src="../js/crud-admin.js"></script> -->

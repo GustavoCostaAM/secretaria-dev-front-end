@@ -42,6 +42,10 @@ function getSendGradesURL(){
     return usePath + "api/grades/sendGrades"
 }
 
+function getCreateTeacherURL(){
+    return usePath + "api/users/registerTeacher"
+}
+
 function getUserByIdURL(userId){
     return usePath + `api/users/${userId}`
 }
@@ -65,10 +69,15 @@ function getSubjectsURL() {
     return usePath + "api/subjects/list"
 }
 
+function getLocalChatbotURL() {
+    return "http://localhost:8090/chat"
+}
+
 function handleSessionExpired(response) {
     if (response.status === 403 || response.status === 401) {
         window.alert("Sessão expirada, faça login novamente.")
         localStorage.removeItem("token")
+        localStorage.removeItem("id")
         window.location.href = "login.html"
         return true
     }
