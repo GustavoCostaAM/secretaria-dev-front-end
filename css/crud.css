@@ -401,3 +401,33 @@ textarea{
     color: white;
     cursor: pointer;
 }
+
+#update-popup{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 50px;
+    width: 250px;
+    
+    background-color: var(--white);
+    border: 0.0625rem solid var(--faint-black);
+    
+    border-radius: 0.5rem;
+}
+
+#update-popup img{
+    margin-right: 10px;
+}
+
+#popup-message-container{
+    margin: 10px;
+    display: flex;
+}
+
+#progress-bar{
+    height: 10px;
+    width: 50%;
+    background-color: var(--black);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
