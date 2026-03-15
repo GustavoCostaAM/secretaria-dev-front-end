@@ -42,6 +42,10 @@ function getSendGradesURL(){
     return usePath + "api/grades/sendGrades"
 }
 
+function getCreateTeacherURL(){
+    return usePath + "api/users/registerTeacher"
+}
+
 function getUserByIdURL(userId){
     return usePath + `api/users/${userId}`
 }

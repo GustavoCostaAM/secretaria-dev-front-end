@@ -253,6 +253,12 @@ dialog{
     border-radius: 10px;
 }
 
+#createUserForm, #editUserForm{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;    
+}
+
 .comment-box{
     background-color: var(--faint-black);
     padding: 15px;
