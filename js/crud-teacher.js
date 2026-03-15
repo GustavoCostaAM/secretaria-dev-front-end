@@ -38,7 +38,7 @@ async function loadStudentsData(token) {
             data.forEach(student => {
                 tbody.innerHTML += `<tr class="table-register">
                     <td>${student.registrationNumber}</td>
-                    <td>${student.name}</td>
+                    <td id="student-name-${student.id}">${student.name}</td>
                     <td>${student.username}</td>
                     <td>${student.email}</td>
                     <td>
@@ -83,9 +83,10 @@ async function openEditNotes() {
             
             if (response.ok) {
                 var data = await response.json()
-                
+                console.log(data)
+
                 //extrai o nome do aluno e os dados da disciplina
-                const studentName = Object.keys(data || {})[0] || '' // by IA
+                const studentName = Object.keys(data || {})[0] || document.querySelector("#student-name-"+studentId).innerText
                 const disciplinaData = Object.values(data?.[studentName]?.map || data?.[studentName] || {}).find(v => v) || {} //BY IA
                 
                 if (!disciplinaData) {
