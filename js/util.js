@@ -46,6 +46,10 @@ function getCreateTeacherURL(){
     return usePath + "api/users/registerTeacher"
 }
 
+function getGenerateEnrollmentCodeURL(){
+    return usePath + "api/enrollments"
+}
+
 function getUserByIdURL(userId){
     return usePath + `api/users/${userId}`
 }

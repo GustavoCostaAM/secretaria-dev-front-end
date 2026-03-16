@@ -217,7 +217,30 @@ function loadEditFormSubmit() {
 //carrega os dados dos usuarios assim que a pagina é aberta
 getUsersData()
 
+async function generatePreEnrollment() {
 
+    const response = await fetch(getGenerateEnrollmentCodeURL(), {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`
+        }
+    })
+
+    if (response.ok) {
+
+        const data = await response.json()
+
+        const resultDiv = document.getElementById("pre-enrollment-result")
+        const codeText = document.getElementById("generated-code")
+
+        codeText.textContent = data.code
+        resultDiv.classList.remove("hidden")
+
+    } else if (handleSessionExpired(response)) {
+        return
+    }
+}
 
 //carrega as materias para o dropList de criação de professores
 const subjectDropList = document.getElementById("subjectDropList")

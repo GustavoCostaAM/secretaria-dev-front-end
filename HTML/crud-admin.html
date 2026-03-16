@@ -37,6 +37,11 @@
                             <button id="create-button" onclick="openDialog('create-register')">
                                 <img src="../assets/icones/create.svg" alt="criar novo registro">
                             </button>
+
+                            <button id="generate-pre-enrollment" onclick="openDialog('generate-pre-enrollment-dialog')" class="button">
+                                Gerar pré-matrícula
+                            </button>
+
                             <form action="" method="">
                                 <input type="search" id="search" placeholder="Buscar usuario">
                             </form>
@@ -144,6 +149,31 @@
             </button>
     
         </form>
+    </dialog>
+
+    <dialog id="generate-pre-enrollment-dialog">
+        <button class="close" onclick="closeDialog('generate-pre-enrollment-dialog')">
+            <img src="../assets/icones/close-button.svg">
+        </button>
+    
+        <div class="dialog-content">
+            <h1>Gerar código de pré-matrícula</h1>
+    
+            <p>Deseja gerar um novo código de pré-matrícula?</p>
+    
+            <button class="button" onclick="generatePreEnrollment()">
+                Confirmar
+            </button>
+    
+            <div id="pre-enrollment-result" class="hidden">
+                <h2>Código gerado:</h2>
+                <p id="generated-code"></p>
+                <p>Encaminhe para o aluno finalizar seu registro</p>
+                <button onclick="navigator.clipboard.writeText(document.getElementById('generated-code').textContent)" class="button" id="enrollment-button">
+                    Copiar
+                </button>
+            </div>
+        </div>
     </dialog>
 
     <script src="../js/util.js"></script>

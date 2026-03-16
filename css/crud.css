@@ -140,6 +140,7 @@ main{
     padding: 10px 25px;
     border-radius: 10px;
     color: var(--white);
+    cursor: pointer;
 }
 
 #create-button{
@@ -263,6 +264,19 @@ dialog{
     background-color: var(--faint-black);
     padding: 15px;
     border-radius: 10px;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#enrollment-button{
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
 }
 
 textarea{
