@@ -251,6 +251,15 @@ dialog{
     width: 70%;
     border: none;
     border-radius: 10px;
+
+    max-width: 650px;
+}
+
+.obs-popup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    gap: 10px;
 }
 
 #createUserForm, #editUserForm{
@@ -306,6 +315,7 @@ textarea{
     right: 5vw;
 
     width: 21vw;
+    min-width: 300px;
     height: 60vh;
 
     background-color: #e0e0e0;

@@ -1,11 +1,5 @@
 function openDialog(id){
     let dialog = document.getElementById(id)
-    dialog.showModal()
-}
-
-function closeDialog(id){
-    let dialog = document.getElementById(id)
-    dialog.close()
 
     //Caso for o popup de observações, limpar os inputs.
     if(id="obs-popup"){
@@ -16,6 +10,12 @@ function closeDialog(id){
         document.getElementById("popup-aluno").textContent = "Boletim de ..."
     }
 
+    dialog.showModal()
+}
+
+function closeDialog(id){
+    let dialog = document.getElementById(id)
+    dialog.close()
 }
 
 function showUpdatePopup(type, message){
