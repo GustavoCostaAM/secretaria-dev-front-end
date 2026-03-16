@@ -292,7 +292,7 @@ textarea{
     border: none;
     border-radius: 100%;
     
-    display: flex;
+    display: none;
     align-items: center;
 
     padding: 1%;

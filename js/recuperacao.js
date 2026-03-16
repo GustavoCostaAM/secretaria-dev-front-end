@@ -19,8 +19,10 @@ submitButton.addEventListener("click", (event) => {
         }).then(response => {
             if (response.ok) {
                 console.log("Email de recuperação enviado com sucesso.")
+                showUpdatePopup("success", "Email de recuperacao enviado com sucesso.")
             } else {
                 console.log("Erro ao enviar email de recuperação. Verifique o email e tente novamente.")
+                showUpdatePopup("error", "Erro ao enviar email de recuperacao.")
             }
         })
     }

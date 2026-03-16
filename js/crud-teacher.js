@@ -51,10 +51,13 @@ async function loadStudentsData(token) {
 
             //após preencher a tabela, adiciona os listeners de editar
             openEditNotes()
+            showUpdatePopup("success", "Alunos carregados com sucesso.")
 
             console.log("fluxo terminou")
         } else if (handleSessionExpired(response)) {
             return
+        } else {
+            showUpdatePopup("error", "Erro ao carregar alunos.")
         }
 }
 

@@ -18,13 +18,13 @@ function closeDialog(id){
 
 }
 
-let i = 0;
 function showUpdatePopup(type, message){
     console.log("Function called")
     let popup = document.getElementById("update-popup");
     let icon = document.getElementById("popup-icon");
     let progressbar = document.getElementById("progress-bar")
     let messageDiv = document.getElementById("popup-message")
+    let chatbotOpenButton = document.getElementById("open-chatbot") //logica feita apenas para a tela de estudante
 
     popup.hidden = false
     progressbar.style.width = "0%"
@@ -41,11 +41,10 @@ function showUpdatePopup(type, message){
     messageDiv.textContent = message
 
     let width = 1
-    let id = setInterval(frame, 25)
+    let intervalId = setInterval(frame, 25)
     function frame() {
         if(width >= 100){
-            clearInterval(id)
-            i = 0
+            clearInterval(intervalId)
         } else {
             width++
             progressbar.style.width = width + "%";
@@ -53,6 +52,10 @@ function showUpdatePopup(type, message){
     }
     setTimeout(()=>{
         popup.hidden = true
+
+        if (chatbotOpenButton) {
+            chatbotOpenButton.style.display = "flex"
+        }
     }, 3000)
     
 
