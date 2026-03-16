@@ -1,236 +1,220 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    }
-   
-    body{
-    background:#f4f4f4;
-    color:#333;
-    }
-   
-   
-   
-    /* HEADER */
-   
-    header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 60px;
-    background:#e8e8e8;
-    }
-   
-    .logo img{
+@import url("./fonts.css");
+@import url("./colors.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+}
+
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: var(--faint-gray);
+}
+
+.logo img {
     width: 150px;
     height: 75px;
-    }
-   
-    nav a{
-    margin-left:25px;
-    text-decoration:none;
-    color:#333;
-    font-weight:500;
-    }
-   
-   
-   
-    /* HERO */
-   
-    .hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:70px;
-    background:#efefef;
-    position:relative;
-    overflow:hidden;
-    }
-   
-   
-    /* PATTERN DE FUNDO */
-   
-    .hero::before{
-   
-    content:"";
-    position:absolute;
-   
-    top:0;
-    left:0;
-   
-    width:100%;
-    height:100%;
-   
-    /* COLOQUE O CAMINHO DA IMAGEM AQUI */
-    background-image:url("../assets/landingPage/Copy.png");
-   
-    background-repeat:repeat;
-   
-    opacity:0.05;
-   
-    z-index:0;
-   
-    }
-   
-   
-    /* GARANTE QUE O CONTEÚDO FIQUE NA FRENTE */
-   
-    .hero *{
-    position:relative;
-    z-index:1;
-    }
-   
-   
-    .hero-text{
-    width:50%;
-    }
-   
-    .hero-text h1{
-    font-size:38px;
-    margin-bottom:20px;
-    }
-   
-    .hero-text p{
-    color:#555;
-    line-height:1.6;
-    }
-   
-    .hero-img img{
-    width:380px;
-    }
-   
-   
-   
-    /* CARDS */
-   
-    .cards{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    padding:60px;
-    }
-   
-    .card{
-    width:260px;
-    background:white;
-    padding:30px;
-    text-align:center;
-    border-radius:8px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.1);
-    }
-   
-   
-   
-    /* CÍRCULO DO ÍCONE */
-   
-    .icon{
-    width:70px;
-    height:70px;
-    background:white;
-    border-radius:50%;
-   
-    display:flex;
-    align-items:center;
-    justify-content:center;
-   
-    margin:0 auto 20px auto;
-   
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-    }
-   
-    .icon img{
-    width:35px;
-    }
-   
-   
-   
-    /* SEÇÃO ESCOLA */
-   
-    .school{
-    padding:60px;
-    background:#f7f7f7;
-    }
-   
-    .school h2{
-    text-align:center;
-    margin-bottom:40px;
-    }
-   
-    .school-container{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:40px;
-    }
-   
-    .school-img img{
-    width:380px;
-    border-radius:6px;
-    }
-   
-    .school-info{
-    max-width:350px;
-    line-height:1.6;
-    }
-   
-   
-   
-    /* CTA */
-   
-    .cta{
-    background:#3e6db0;
-    color:white;
-   
-    display:flex;
-    justify-content:center;
-    align-items:center;
-   
-    gap:40px;
-   
-    padding:25px;
-    font-size:18px;
-    }
-   
-    .cta button{
-    padding:12px 25px;
-   
-    border:none;
-   
-    background:white;
-    color:#3e6db0;
-   
-    font-weight:bold;
-   
-    border-radius:5px;
-   
-    cursor:pointer;
-    }
-   
-   
-   
-    /* FOOTER */
-   
-    footer{
-    background:#2d2d2d;
-    color:white;
-   
-    padding:25px;
-   
-    text-align:center;
-    }
-   
-    .footer-info{
-    display:flex;
-    justify-content:space-around;
-   
-    margin-bottom:15px;
-   
-    font-size:14px;
-    }
-   
-    .copy{
-    font-size:12px;
-    color:#bbb;
-    }
- 
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+}
+
+
+
+/* HERO */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.school, .hero{
+    z-index: 1;
+}
+
+.hero::before, .school::before {
+    content: "";
+    z-index: -2 !important;
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/imagens/Copy.png');
+    opacity: 0.05;
+}
+
+
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: var(--black);
+    line-height: 1.6;
+}
+
+.hero-img img {
+    width: 380px;
+}
+
+
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px;
+}
+
+.card {
+    width: 260px;
+    background: var(--white);
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* CÍRCULO DO ÍCONE */
+
+.icon {
+    width: 70px;
+    height: 70px;
+    background: var(--white);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px auto;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon img {
+    width: 35px;
+}
+
+
+
+/* SEÇÃO ESCOLA */
+
+.school {
+    padding: 60px;
+    background: var(--white);
+    position: relative;
+}
+
+.school h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.school-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.school-img img {
+    width: 380px;
+    border-radius: 6px;
+}
+
+.school-info {
+    max-width: 350px;
+    line-height: 1.6;
+}
+
+
+
+/* CTA */
+
+.cta {
+    background: var(--primary-color);
+    color: var(--white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 25px;
+    font-size: 18px;
+}
+
+.cta button {
+    padding: 12px 25px;
+
+    border: none;
+
+    background: var(--white);
+    color: var(--primary-color);
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+    color: var(--white);
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+.copy {
+    font-size: 12px;
+    color: var(--faint-gray);
+}
