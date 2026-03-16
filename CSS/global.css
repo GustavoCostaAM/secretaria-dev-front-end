@@ -48,3 +48,42 @@ html {
 .hover-bright:hover {
 	filter: brightness(1.2);
 }
+
+
+/* popup de barra de sucesso */
+
+#update-popup{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 50px;
+    width: 250px;
+    
+    background-color: var(--white);
+    border: 0.0625rem solid var(--faint-black);
+    
+    border-radius: 0.5rem;
+
+	z-index: 999;
+}
+
+#update-popup img{
+    margin-right: 10px;
+	z-index: 999;
+}
+
+#popup-message-container{
+    margin: 10px;
+    display: flex;
+	z-index: 999;
+}
+
+#progress-bar{
+    height: 10px;
+    width: 50%;
+    background-color: var(--black);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+
+	z-index: 999;
+}

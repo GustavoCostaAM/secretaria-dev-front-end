@@ -2,15 +2,21 @@ function openDialog(id){
     let dialog = document.getElementById(id)
 
     //Caso for o popup de observações, limpar os inputs.
-    if(id="obs-popup"){
-        document.getElementById("popup-n1").value = undefined
-        document.getElementById("popup-n2").value = undefined
-        document.getElementById("popup-observacao").value = null
+    if(id === "obs-popup"){
+        const n1 = document.getElementById("popup-n1")
+        const n2 = document.getElementById("popup-n2")
+        const observacao = document.getElementById("popup-observacao")
+        const aluno = document.getElementById("popup-aluno")
 
-        document.getElementById("popup-aluno").textContent = "Boletim de ..."
+        if (n1) n1.value = ""
+        if (n2) n2.value = ""
+        if (observacao) observacao.value = ""
+        if (aluno) aluno.textContent = "Boletim de ..."
     }
 
-    dialog.showModal()
+    if (dialog) {
+        dialog.showModal()
+    }
 }
 
 function closeDialog(id){

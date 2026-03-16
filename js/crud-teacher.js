@@ -249,6 +249,7 @@ async function addUpdateButton(){
         await updateAssessment(assessmentId2, grade2, observations, studentId)
 
         console.log("Notas atualizadas com sucesso.")
+        showUpdatePopup("success", "Notas atualizadas com sucesso.")
     }, {once: true})
 }
 

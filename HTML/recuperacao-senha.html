@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../CSS/fonts.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/recuperacao.css">
@@ -32,6 +33,14 @@
             </button>
         </form>
     </main>
+
+    <div id="update-popup" hidden>
+        <div id="popup-message-container">
+            <img src="../assets/icons/fi-br-check.svg" id="popup-icon">
+            <p id="popup-message"></p>
+        </div>
+        <div id="progress-bar"></div>
+    </div>
 
     <script src="../js/util.js"></script>
     <script src="../js/popup.js"></script>
