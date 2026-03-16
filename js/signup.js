@@ -33,9 +33,10 @@ submitButton.addEventListener("click", async function(event) {
 
     //caso de sucesso na api
     if (response.ok){
+        showUpdatePopup("success", "Cadastro realizado com sucesso.")
         window.location.href = "login.html" //pagina de login
     }else{
-        alert("Erro ao fazer cadastro, tente novamente.")
+        showUpdatePopup("error", "Erro ao fazer cadastro, tente novamente.")
         window.location.reload() 
     }
 })

@@ -33,6 +33,8 @@ form.addEventListener("click", async function (event) {
         const token = data.token
         const id = data.id
 
+        showUpdatePopup("success", "Login realizado com sucesso.")
+
         console.log(token)
 
         //guarda o token no local storage
@@ -56,7 +58,7 @@ form.addEventListener("click", async function (event) {
         }
 
     }else {
-        alert("Erro ao fazer login, tente novamente.")
+        showUpdatePopup("error", "Erro ao fazer login, tente novamente.")
         window.location.reload() //recarrega a página para limpar os campos
     }
 })

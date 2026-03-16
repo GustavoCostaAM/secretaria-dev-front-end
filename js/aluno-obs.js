@@ -41,6 +41,8 @@ async function loadObservations() {
         console.log(data)
     } else if (handleSessionExpired(response)) {
         return
+    } else {
+        showUpdatePopup("error", "Nao foi possivel carregar as observacoes.")
     }
 }
 

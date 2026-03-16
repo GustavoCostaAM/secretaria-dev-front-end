@@ -29,6 +29,7 @@ async function getUsersData() {
     if (response.ok) {
         const data = await response.json()
         console.log(data)
+        showUpdatePopup("success", "Usuarios carregados com sucesso.")
 
         if (!adminTableBody) {
             console.error("Elemento #table-infos nao encontrado no HTML")
@@ -56,10 +57,10 @@ async function getUsersData() {
                     </td>
                     <td>
                         <button class="edit register" data-id="${element.id}" onclick="openDialog('edit-register')">
-                            ✏️
+                            <img src="../assets/icons/fi-br-pencil.svg">
                         </button>
                         <button class="delete register" data-id="${element.id}">
-                            🗑️
+                            <img src="../assets/icons/fi-br-trash.svg">
                         </button>
                     </td>
                 </tr>`
@@ -72,6 +73,8 @@ async function getUsersData() {
         console.log("fluxo terminou")
     } else if (handleSessionExpired(response)) {
         return
+    } else {
+        showUpdatePopup("error", "Erro ao carregar usuarios.")
     }
 }
 
@@ -95,10 +98,13 @@ async function loadDeleteButtons() {
             if (response.ok) {
                 //recarrega os dados dos usuarios
                 getUsersData()
+                showUpdatePopup("success", "Usuario desativado com sucesso.")
 
                 console.log("Usuario deletado com sucesso")
             } else if (handleSessionExpired(response)) {
                 return
+            } else {
+                showUpdatePopup("error", "Erro ao desativar usuario.")
             }
         })
     })
@@ -133,9 +139,12 @@ async function loadEditButtons() {
                 document.getElementById("email").value = user.email || ""
                 document.getElementById("username").value = user.username || ""          
                 document.getElementById("edit-register").showModal()
+                showUpdatePopup("success", "Dados do usuario carregados para edicao.")
 
             } else if (handleSessionExpired(response)) {
                 return
+            } else {
+                showUpdatePopup("error", "Erro ao carregar dados do usuario.")
             }
         })
     })
@@ -172,10 +181,13 @@ function loadRegisterFormSubmit() {
                 getUsersData()
                 document.getElementById("create-register").close()
                 document.getElementById("createUserForm").reset()
+                showUpdatePopup("success", "Professor criado com sucesso.")
                 console.log("Usuário criado com sucesso")
             } else if (handleSessionExpired(response)) {
                 console.log("test")
                 return
+            } else {
+                showUpdatePopup("error", "Erro ao criar professor.")
             }
 })}
 
@@ -207,9 +219,12 @@ function loadEditFormSubmit() {
         if (response.ok) {
             getUsersData()
             document.getElementById("edit-register").close()
+            showUpdatePopup("success", "Usuario atualizado com sucesso.")
             console.log("Usuário atualizado com sucesso")
         } else if (handleSessionExpired(response)) {
             return
+        } else {
+            showUpdatePopup("error", "Erro ao atualizar usuario.")
         }
     })
 }

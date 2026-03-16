@@ -18,7 +18,7 @@ submitButton.addEventListener("click", (event) => {
 
     //valida se as senhas coincidem
     if (newPassword !== confirmPassword) {
-        window.alert("As senhas não coincidem. Por favor, tente novamente.")
+        showUpdatePopup("error", "As senhas nao coincidem. Tente novamente.")
         return
     }
 
@@ -32,9 +32,10 @@ submitButton.addEventListener("click", (event) => {
         headers: {"Content-Type": "application/json"}
     }).then(response => {
         if (response.ok) {
+            showUpdatePopup("success", "Senha atualizada com sucesso.")
             window.location.href = "login.html" //redireciona para a página de login após sucesso
         } else {
-            window.alert("Erro ao atualizar senha. O código de recuperação pode ser inválido ou expirado.")
+            showUpdatePopup("error", "Erro ao atualizar senha. Codigo invalido ou expirado.")
             window.location.href = "recuperacao-email.html" //redireciona para o inicio do fluxo de recuperação
         }
     })

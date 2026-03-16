@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/crud.css">
 
     <title>Opaco - Área do Administrador</title>
@@ -43,7 +44,7 @@
                             </button>
 
                             <form action="" method="">
-                                <input type="search" id="search" placeholder="Buscar usuario">
+                                <input type="search" id="search" placeholder="Buscar usuario por ID">
                             </form>
                         </div>
                     </div>
@@ -175,10 +176,17 @@
             </div>
         </div>
     </dialog>
+    <div id="update-popup" hidden>
+        <div id="popup-message-container">
+            <img src="../assets/icons/fi-br-check.svg" id="popup-icon">
+            <p id="popup-message"></p>
+        </div>
+        <div id="progress-bar"></div>
+    </div>
 
     <script src="../js/util.js"></script>
-    <script src="../js/crud-admin.js"></script>
     <script src="../js/popup.js"></script>
+    <script src="../js/crud-admin.js"></script>
 </body>
 
 </html>

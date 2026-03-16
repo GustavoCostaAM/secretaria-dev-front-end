@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/crud.css">
+    <link rel="stylesheet" href="../css/global.css">
 
     <title>Opaco - Area do Aluno</title>
     <style>
@@ -103,6 +104,14 @@
         </div>
     </dialog>
 
+    <div id="update-popup" hidden>
+        <div id="popup-message-container">
+            <img src="../assets/icons/fi-br-check.svg" id="popup-icon">
+            <p id="popup-message"></p>
+        </div>
+        <div id="progress-bar"></div>
+    </div>
+
     <!-- parte para o chatbot -->
     <button id="open-chatbot">
         <img src="../assets/icones/fi-br-comment-info.svg" alt="chatbot">
@@ -110,11 +119,8 @@
 
     <!-- mensagens -->
     <section id="blocoMensagens">
-        <div class="userMessage">
-            <p>Mensagem mockada do usuario</p>
-        </div>
         <div class="botMessage">
-            <p>Mensagem mockada do bot</p>
+            <p>Ola! como posso te ajudar?</p>
         </div>
 
         <form class="chatInputArea">
@@ -124,8 +130,8 @@
     </section>
 
     <script src="../js/util.js"></script>
-    <script src="../js/crud-aluno.js"></script>
     <script src="../js/popup.js"></script>
+    <script src="../js/crud-aluno.js"></script>
     <script src="../js/chatbot.js"></script>
 </body>
 

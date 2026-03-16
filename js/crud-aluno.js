@@ -58,8 +58,12 @@ async function loadStudentData(token) {
                 </tr>`
             });
 
+            showUpdatePopup("success", "Notas carregadas com sucesso!")
+
             console.log("fluxo terminou")
         } else if (handleSessionExpired(response)) {
             return
+        } else {
+            showUpdatePopup("error", "Nao foi possivel carregar as notas.")
         }
     }

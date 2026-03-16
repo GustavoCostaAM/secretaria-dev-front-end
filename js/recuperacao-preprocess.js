@@ -14,8 +14,10 @@ function validateRecoveryCode(code) {
     }).then(response => {
         if (!response.ok) {
             console.log("Código de recuperação inválido ou expirado.")
+            showUpdatePopup("error", "Codigo de recuperacao invalido ou expirado.")
             window.location.href = "recuperacao-email.html" //redireciona para a página de recuperação de email caso o código seja inválido
         }else{
+            showUpdatePopup("success", "Codigo de recuperacao validado.")
             return;
         }
     })
@@ -27,5 +29,6 @@ if (code) {
     validateRecoveryCode(code)
 } else {
     console.log("Código de recuperação não encontrado na URL.")
+    showUpdatePopup("error", "Codigo de recuperacao nao encontrado na URL.")
     window.location.href = "recuperacao-email.html"
 }

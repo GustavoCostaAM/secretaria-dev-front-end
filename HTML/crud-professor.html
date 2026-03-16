@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/crud.css">
+    <link rel="stylesheet" href="../css/global.css">
 
     <title>Opaco - Area do Professor</title>
     <style>
@@ -34,7 +35,7 @@
                         <h1>Boletim</h1>
                         <div id="search-div">
                             <form action="" method="">
-                                <input type="search" id="search" placeholder="Buscar por Matéria">
+                                <input type="search" id="search" placeholder="Buscar por Matrícula">
                             </form>
                         </div>
                     </div>
@@ -50,19 +51,6 @@
                                 <th>Ação</th>
                             </thead>
                             <tbody id="tbody">
-                                <!--CRUD's loop for-->
-                                <tr class="table-register">
-                                    <td>12340</td>
-                                    <td>Aristeu da Silva</td>
-                                    <td>Aris</td>
-                                    <td>aristeu@email.com</td>
-                                    <td>
-                                        <button class="button observation" onclick="openDialog('obs-popup')">
-                                            <img src="../assets/icones/fi-br-comment-info.svg">
-                                        </button>
-                                    </td>
-                                </tr>
-                                <!--Meh-->
                             </tbody>
                         </table>
                     </div>
@@ -88,13 +76,13 @@
 
     <dialog id="obs-popup">
         <button class="close" onclick="closeDialog('obs-popup')"><img src="../assets/icones/close-button.svg"></button>
-        <div class="">
-            <h1 id="popup-aluno">Boletim de Aristeu da Silva</h1>
+        <div class="obs-popup-form">
+            <h1 id="popup-aluno">Boletim de ...</h1>
             <hr>
             <label for="n1">Nota 1: </label>
-            <input type="number" name="n1" id="popup-n1">
+            <input type="number" name="n1" id="popup-n1" required>
             <label for="n2">Nota 2: </label>
-            <input type="number" name="n2" id="popup-n2">
+            <input type="number" name="n2" id="popup-n2" required>
             <hr>
             <div>
                 <h1>Observação</h1>
@@ -105,9 +93,18 @@
             </button>
         </div>
     </dialog>
+
+    <div id="update-popup" hidden>
+        <div id="popup-message-container">
+            <img src="../assets/icons/fi-br-check.svg" id="popup-icon">
+            <p id="popup-message"></p>
+        </div>
+        <div id="progress-bar"></div>
+    </div>
+    
     <script src="../js/util.js"></script>
-    <script src="../js/crud-teacher.js"></script>
     <script src="../js/popup.js"></script>
+    <script src="../js/crud-teacher.js"></script>
 </body>
 
 </html>
